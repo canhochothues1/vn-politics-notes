@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tô Lâm — Chân dung qua báo chí nước ngoài</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap');
+
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --red: #b91c1c;
+    --gold: #92400e;
+    --muted: #5c4a2a;
+    --rule: #c9b99a;
+    --highlight: #fef9ef;
+    --footnote-bg: #ede8de;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* masthead */
+  .masthead {
+    border-top: 4px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 12px 0 10px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .byline {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 0;
+    margin-bottom: 36px;
+  }
+
+  /* sections */
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 44px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--ink);
+    color: var(--ink);
+  }
+
+  h2 .num {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--red);
+    margin-right: 8px;
+    font-style: normal;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  /* pull quote */
+  .pullquote {
+    border-left: 4px solid var(--red);
+    background: var(--highlight);
+    padding: 16px 20px;
+    margin: 28px 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+
+  /* inline footnote ref */
+  sup a {
+    color: var(--red);
+    text-decoration: none;
+    font-size: .7rem;
+    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
+  }
+  sup a:hover { text-decoration: underline; }
+
+  /* footnotes section */
+  .footnotes {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 2px solid var(--rule);
+  }
+
+  .footnotes h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .fn {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 0 10px;
+    margin-bottom: 10px;
+    font-size: .82rem;
+    line-height: 1.55;
+    background: var(--footnote-bg);
+    padding: 8px 12px;
+    border-radius: 2px;
+  }
+
+  .fn-num {
+    color: var(--red);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    padding-top: 1px;
+  }
+
+  .fn a {
+    color: var(--gold);
+    word-break: break-all;
+    text-decoration: none;
+  }
+  .fn a:hover { text-decoration: underline; }
+
+  .fn-label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* tags */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: var(--red);
+    color: white;
+    padding: 2px 7px;
+    margin-right: 6px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+  }
+
+  hr.section { border: none; border-top: 1px solid var(--rule); margin: 36px 0; }
+
+  @media (max-width: 600px) {
+    body { padding: 24px 18px 60px; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span>Phân tích / Chân dung chính trị</span>
+  <span>Tổng hợp từ báo chí quốc tế · 2021–2026</span>
+</div>
+
+<h1>Tô Lâm</h1>
+<p class="subtitle">Từ tướng công an bóng tối đến người nắm trọn quyền lực Việt Nam — qua lăng kính báo chí nước ngoài</p>
+
+<div class="byline">Tổng hợp · Nguồn: BBC, Reuters, Al Jazeera, RFA, RSF, HRW, Fulcrum/ISEAS, Vice, CNN, The Vietnamese, Asia Times</div>
+
+<p>Tô Lâm sinh năm 1957 tại Hưng Yên, dành toàn bộ sự nghiệp trong Bộ Công an — cơ quan chuyên theo dõi người bất đồng chính kiến và kiểm soát xã hội dân sự trong nhà nước độc đảng. Ông chưa từng lãnh đạo một tỉnh hay giữ chức vụ kinh tế nào; quyền lực của ông đến hoàn toàn từ bộ máy an ninh bí ẩn nhất Việt Nam.<sup><a href="#fn1">[1]</a></sup></p>
+
+<p>Từ tháng 8/2024, Tô Lâm nắm chức Tổng Bí thư Đảng Cộng sản Việt Nam sau khi Nguyễn Phú Trọng qua đời, và đến tháng 4/2026, Quốc hội bầu ông kiêm Chủ tịch nước — mô hình tập quyền mà các nhà phân tích nước ngoài so sánh với Tập Cận Bình.<sup><a href="#fn2">[2]</a></sup></p>
+
+<hr class="section">
+
+<h2><span class="num">§ 1</span> Xuất thân từ bộ máy an ninh — người "cuối cùng còn đứng"</h2>
+
+<p>Ông gia nhập Bộ Công an sau khi tốt nghiệp học viện cảnh sát và ở lại đó suốt hơn bốn thập kỷ, trước khi trở thành Bộ trưởng vào năm 2016. Theo giáo sư Zachary Abuza tại National War College (Washington), Tô Lâm đã vũ khí hóa các cuộc điều tra chống tham nhũng để "hệ thống loại bỏ các đối thủ trong Bộ Chính trị còn đủ điều kiện trở thành Tổng Bí thư." Kết quả: ngoài Thủ tướng Phạm Minh Chính, "Tô Lâm là người duy nhất còn đứng vững."<sup><a href="#fn3">[3]</a></sup></p>
+
+<p>Các đồng minh của ông nhanh chóng được cài vào các vị trí then chốt, bao gồm người kế nhiệm tại Bộ Công an. Đây là điều mà Fulcrum/ISEAS gọi là sự nổi lên của "phe Hưng Yên" và "bộ máy công an" trong Bộ Chính trị.<sup><a href="#fn4">[4]</a></sup></p>
+
+<div class="pullquote">"Concentrating greater power in To Lam's hands could pose risks to Vietnam's political system, such as increased authoritarianism." — Lê Hồng Hiệp, ISEAS Yusof Ishak Institute, Singapore</div>
+
+<hr class="section">
+
+<h2><span class="num">§ 2</span> Vụ bắt cóc Trịnh Xuân Thanh — bàn tay đứng sau một vụ "Chiến tranh Lạnh"</h2>
+
+<p><span class="tag">Vụ án quốc tế</span> Đây là vụ tai tiếng nghiêm trọng nhất của Tô Lâm trên trường quốc tế. Ngày 23/7/2017, cựu quan chức dầu khí Trịnh Xuân Thanh — đang xin tị nạn tại Đức — bị kéo lên xe ô tô giữa ban ngày tại công viên Tiergarten, Berlin. Ông bị đưa bí mật về Việt Nam, bị xét xử và lãnh hai án tù chung thân về tội tham nhũng.<sup><a href="#fn5">[5]</a></sup></p>
+
+<p>Công tố Đức gọi đây là "vụ bắt cóc có tổ chức của nhà nước" do tình báo Việt Nam thực hiện, mang hơi hướng Chiến tranh Lạnh. Đức đã trục xuất tùy viên báo chí của đại sứ quán Việt Nam, tuyên bố vụ việc là "vi phạm chưa từng có và gây sốc đối với luật pháp Đức và quốc tế."<sup><a href="#fn6">[6]</a></sup></p>
+
+<p>Vụ bắt cóc diễn ra trong chuyến thăm Slovakia của Tô Lâm — khi đó là Bộ trưởng Công an. Một bị cáo trong phiên tòa tại Berlin bị cáo buộc đã lái xe đến khách sạn Borik ở Bratislava nơi Tô Lâm đang lưu trú. Slovakia sau đó đe dọa đóng băng quan hệ với Việt Nam, và năm 2020 chính thức trục xuất một nhà ngoại giao Việt Nam liên quan.<sup><a href="#fn7">[7]</a></sup></p>
+
+<p>Trong bản án của bị cáo Nguyễn Hải Long tại tòa Berlin, thẩm phán tuyên rõ Tô Lâm là người tổ chức vụ bắt cóc tại châu Âu. Nhà báo Lê Trọng Khoa — người theo dõi phiên tòa — trích dẫn lời luật sư: "Hiện chưa đủ bằng chứng thực tế để truy tố Tô Lâm, nhưng họ sẽ làm từng bước." Ông Khoa cũng nhận định rằng khả năng Trịnh Xuân Thanh được trả về Đức là rất thấp chừng nào Tô Lâm còn cầm quyền — vì lời khai của Thanh sẽ "đặt ra nguy hiểm lớn cho Đảng Cộng sản và đặc biệt là Tô Lâm."<sup><a href="#fn8">[8]</a></sup></p>
+
+<p>Năm 2025, Tòa án Việt Nam xử Lê Trọng Khoa — nhà báo đưa tin vụ bắt cóc — 17 năm tù vắng mặt vì tội "tuyên truyền chống nhà nước."<sup><a href="#fn9">[9]</a></sup></p>
+
+<hr class="section">
+
+<h2><span class="num">§ 3</span> Vụ AVG–MobiFone và em trai tỷ phú Phạm Nhật Vượng</h2>
+
+<p><span class="tag">Tai tiếng thân hữu</span> Đây là mối quan hệ ít được báo chí nước ngoài đào sâu nhất, nhưng cực kỳ có giá trị để hiểu cấu trúc quyền lực thực sự của Việt Nam.</p>
+
+<p>Năm 2019, <strong>Phạm Nhật Vũ</strong> — em trai của tỷ phú Phạm Nhật Vượng, chủ tịch Vingroup — bị bắt vì tội đưa hối lộ trong vụ MobiFone mua lại 95% cổ phần công ty truyền hình Audio Visual Global (AVG) của ông với giá 8,9 nghìn tỷ đồng (khoảng 384 triệu USD) — một giao dịch mà cơ quan kiểm tra nhà nước xác định đã gây thiệt hại hơn 6.500 tỷ đồng cho ngân sách.<sup><a href="#fn10">[10]</a></sup></p>
+
+<p>Phạm Nhật Vũ thừa nhận đã hối lộ tổng cộng hơn 6,2 triệu USD cho các quan chức: 3 triệu USD cho Bộ trưởng Thông tin Nguyễn Bắc Son (lãnh án tù chung thân), 2,5 triệu USD cho Chủ tịch MobiFone Lê Nam Trà (23 năm tù), 500.000 USD và 200.000 USD cho các quan chức khác.<sup><a href="#fn11">[11]</a></sup></p>
+
+<p>Điều gây chú ý là: <strong>Bộ Công an — do Tô Lâm đứng đầu</strong> — là cơ quan điều tra vụ án và đồng thời là cơ quan đề nghị <em>khoan hồng đặc biệt</em> cho Phạm Nhật Vũ. Lý do: ông Vũ đã "chủ động hợp tác," "đóng góp nhiều cho Phật giáo Việt Nam," hoàn trả toàn bộ số tiền, và hủy hợp đồng chuyển nhượng. Kết quả: Phạm Nhật Vũ chỉ lãnh 3 năm tù — mức án thấp đáng kinh ngạc so với mức 12–20 năm mà luật hình sự quy định cho tội đưa hối lộ với số tiền trên 1 tỷ đồng.<sup><a href="#fn12">[12]</a></sup></p>
+
+<div class="pullquote">Trong khi cựu Bộ trưởng Nguyễn Bắc Son lãnh án chung thân vì nhận 3 triệu USD hối lộ, Phạm Nhật Vũ — người đưa 6,2 triệu USD hối lộ — chỉ ngồi tù 3 năm. Bộ Công an do Tô Lâm lãnh đạo là cơ quan đề nghị mức án đó.</div>
+
+<p>Anh trai của Phạm Nhật Vũ — ông Phạm Nhật Vượng, người giàu nhất Việt Nam với khối tài sản 34 tỷ USD tính đến 4/2026 (Forbes) — giữ im lặng xuyên suốt. Fulcrum (ISEAS) ghi nhận rằng Vingroup là tập đoàn tư nhân lớn nhất Việt Nam, thuộc nhóm "đầu sỏ kinh tế" xuất thân từ Đông Âu thời Liên Xô, có quan hệ sâu rộng với giới quan chức Hà Nội từ nhiều thập kỷ qua.<sup><a href="#fn13">[13]</a></sup></p>
+
+<p>Năm 2022, khi tin đồn về Phạm Nhật Vượng bị cấm xuất cảnh lan rộng khiến cổ phiếu Vingroup sụt 6,64% chỉ trong một ngày, chính Thiếu tướng Tô Ân Xô — người phát ngôn của Bộ Công an Tô Lâm — đã đứng ra công khai bác bỏ thông tin này là "tin giả."<sup><a href="#fn14">[14]</a></sup></p>
+
+<hr class="section">
+
+<h2><span class="num">§ 4</span> Vingroup, VinSpeed và quyền lực kinh tế dưới thời Tô Lâm</h2>
+
+<p>Mối quan hệ giữa Tô Lâm và Vingroup không chỉ dừng ở vụ AVG. Tháng 5/2025, Vingroup thông qua công ty con VinSpeed đề xuất trở thành <em>nhà đầu tư duy nhất</em> cho dự án đường sắt cao tốc Bắc–Nam trị giá 61 tỷ USD — yêu cầu nhà nước cho vay không lãi suất 49 tỷ USD trong 35 năm. Đề xuất gây chấn động dư luận, các bài viết trên báo nhà nước đồng loạt biến mất trong vòng 24 giờ.<sup><a href="#fn15">[15]</a></sup></p>
+
+<p>Asia Times ghi nhận một sự trùng hợp đáng chú ý: đúng ngày đề xuất VinSpeed bị rò rỉ (11/5/2025), Tổng Bí thư Tô Lâm công bố bài viết kinh tế lớn mang tên "Động lực mới cho phát triển kinh tế" — trong đó ca ngợi vai trò dẫn dắt của khu vực tư nhân. Asia Times bình luận rằng động thái kiểm duyệt có thể phản ánh sự kiểm soát thiệt hại lẫn sức kháng cự từ nội bộ giới tinh hoa quyền lực.<sup><a href="#fn15">[15]</a></sup></p>
+
+<p>Fulcrum/ISEAS cảnh báo: kể từ khi Tô Lâm lên nắm quyền tháng 8/2024, "Bộ Công an và các doanh nghiệp liên quan đến nó đang tận dụng quyền lực không bị kiểm soát của Tô Lâm để mở rộng dấu chân kinh tế và ảnh hưởng của mình một cách nhanh chóng, làm dấy lên lo ngại về tình trạng thân hữu và tham nhũng ngày càng gia tăng."<sup><a href="#fn16">[16]</a></sup></p>
+
+<hr class="section">
+
+<h2><span class="num">§ 5</span> Vụ "bò dát vàng" — biểu tượng đạo đức giả</h2>
+
+<p>Tháng 11/2021 — trong khi Việt Nam đang phong tỏa COVID-19 — Salt Bae đăng video đút cho Tô Lâm ăn miếng bò Tomahawk dát vàng giá 1.000–2.000 USD tại nhà hàng Nusr-Et Knightsbridge (London), trong chuyến công du dự COP26 tại Glasgow. Video lan rộng trên TikTok, Facebook, Twitter rồi bị xóa sau khi thu hút sự chú ý của truyền thông.<sup><a href="#fn17">[17]</a></sup></p>
+
+<p>BBC và Al Jazeera chỉ ra sự phi lý: giá một suất bò bằng hơn một tháng lương bộ trưởng (600–800 USD), trong khi thu nhập bình quân người Việt năm 2021 chỉ khoảng 230 USD/tháng.<sup><a href="#fn18">[18]</a></sup></p>
+
+<p>Vice ghi nhận thêm một chi tiết giàu ý nghĩa biểu tượng: ngay trước bữa ăn đó, Tô Lâm đã dẫn đoàn đặt vòng hoa tại mộ Karl Marx ở Highgate Cemetery.<sup><a href="#fn19">[19]</a></sup></p>
+
+<p>Hệ quả: anh Bùi Tuấn Lâm từ Đà Nẵng đăng video nhái lại cảnh Salt Bae — rắc hành lá lên bát bún bò — bị triệu tập, rồi bị kết án <strong>5 năm 6 tháng tù</strong> vì tội "tuyên truyền chống nhà nước."<sup><a href="#fn20">[20]</a></sup></p>
+
+<hr class="section">
+
+<h2><span class="num">§ 6</span> Nhà nước công an trị — đàn áp báo chí và xã hội dân sự</h2>
+
+<p>RSF (Phóng viên Không Biên giới) xác định Tô Lâm là "nhân vật then chốt" trong chiến lược bịt miệng báo chí độc lập Việt Nam — khi ông đứng đầu Bộ Công an từ 2016 đến 2024. Ông chủ trì xây dựng Luật An ninh mạng 2019 mô phỏng theo luật Trung Quốc, và Ủy ban Chỉ đạo 35 — mạng lưới hàng nghìn nhân viên được giao nhiệm vụ tuyên truyền và triệt tiêu tiếng nói phản biện trực tuyến. Việt Nam hiện xếp thứ 173/180 trong Chỉ số Tự do Báo chí Thế giới của RSF.<sup><a href="#fn21">[21]</a></sup></p>
+
+<p>Human Rights Watch nhận định: "Với sự lên ngôi của Tô Lâm, Việt Nam hiện là một nhà nước công an trị theo nghĩa đen" — Bộ Chính trị bị chi phối bởi các quan chức an ninh hiện tại và đã nghỉ hưu. Năm 2024, tòa án kết án ít nhất 43 nhà hoạt động, trong đó nhiều người bị phạt từ 5 đến 11 năm tù.<sup><a href="#fn22">[22]</a></sup></p>
+
+<p>Al Jazeera ghi nhận: chính trong giai đoạn Tô Lâm leo quyền, "không gian dân chủ bị thu hẹp bằng cách tấn công mạnh vào các nhà báo độc lập, nghệ sĩ và hoạt động mạng xã hội chỉ trích chính phủ."<sup><a href="#fn23">[23]</a></sup></p>
+
+<hr class="section">
+
+<h2><span class="num">§ 7</span> Ngoại giao và tập quyền kiểu Trung Quốc</h2>
+
+<p>Dù bị phương Tây coi là nhân vật đáng ngờ về nhân quyền, Tô Lâm vẫn tích cực hoạt động ngoại giao: tái đắc cử Tổng Bí thư (1/2026), được bầu làm Chủ tịch nước (4/2026), thăm Singapore (3/2025), gặp Thủ tướng Anh Keir Starmer tại Downing Street (10/2025), điện đàm với Trump về thuế quan (4/2025), và thăm Trung Quốc (4/2026).<sup><a href="#fn24">[24]</a></sup></p>
+
+<p>Reuters trích phân tích từ Alexander Vuving (Asia-Pacific Center for Security Studies): sự kết hợp hai vai trò Tổng Bí thư và Chủ tịch nước "sẽ đưa chính trị nội bộ Việt Nam sang trạng thái bình thường mới, nơi hầu hết các giả định cũ về chính trị Việt Nam — bao gồm lãnh đạo tập thể — không còn hiệu lực."<sup><a href="#fn2">[2]</a></sup></p>
+
+<!-- FOOTNOTES -->
+<div class="footnotes">
+  <h3>Chú thích nguồn</h3>
+
+  <div class="fn" id="fn1">
+    <span class="fn-num">[1]</span>
+    <span><span class="fn-label">Tiểu sử · Malay Mail / AFP:</span> "Who is To Lam, the ex-public security minister turned Vietnam top leader" — <a href="https://www.malaymail.com/news/world/2024/08/03/who-is-to-lam-the-ex-public-security-minister-turned-vietnam-top-leader/145929" target="_blank">malaymail.com</a></span>
+  </div>
+
+  <div class="fn" id="fn2">
+    <span class="fn-num">[2]</span>
+    <span><span class="fn-label">Tập quyền · Reuters / US News:</span> "Vietnam's Top Leader To Lam Consolidates Power, Gets China-Style Mandate" (April 7, 2026) — <a href="https://www.usnews.com/news/world/articles/2026-04-06/vietnam-parliament-elects-party-leader-to-lam-as-new-state-president" target="_blank">usnews.com</a></span>
+  </div>
+
+  <div class="fn" id="fn3">
+    <span class="fn-num">[3]</span>
+    <span><span class="fn-label">Leo quyền · Malay Mail / AFP:</span> Zachary Abuza quoted: "last man standing" — <a href="https://www.malaymail.com/news/world/2024/08/03/who-is-to-lam-the-ex-public-security-minister-turned-vietnam-top-leader/145929" target="_blank">malaymail.com</a></span>
+  </div>
+
+  <div class="fn" id="fn4">
+    <span class="fn-num">[4]</span>
+    <span><span class="fn-label">Cấu trúc quyền lực · Fulcrum / ISEAS:</span> "To Lam's Consolidation of Power: Implications for Vietnam's Political and Economic Prospects" (April 2026) — <a href="https://fulcrum.sg/to-lams-consolidation-of-power-implications-for-vietnams-political-and-economic-prospects/" target="_blank">fulcrum.sg</a></span>
+  </div>
+
+  <div class="fn" id="fn5">
+    <span class="fn-num">[5]</span>
+    <span><span class="fn-label">Bắt cóc TXT · Al Jazeera:</span> "Vietnam jails Trinh Xuan Thanh for life over corruption" (Jan 22, 2018) — <a href="https://www.aljazeera.com/news/2018/01/vietnam-jails-trinh-xuan-thanh-life-corruption-180122055909420.html" target="_blank">aljazeera.com</a></span>
+  </div>
+
+  <div class="fn" id="fn6">
+    <span class="fn-num">[6]</span>
+    <span><span class="fn-label">Đức trục xuất tùy viên · BBC:</span> "Germany expels Vietnam attache over suspected kidnap" — <a href="https://feeds.bbci.co.uk/news/world-europe-40806193" target="_blank">bbc.co.uk</a></span>
+  </div>
+
+  <div class="fn" id="fn7">
+    <span class="fn-num">[7]</span>
+    <span><span class="fn-label">Slovakia đóng băng quan hệ · Reuters / Yahoo:</span> "Slovakia threatens to freeze relations with Vietnam over kidnapping case" — <a href="https://www.yahoo.com/news/slovakia-threatens-freeze-relations-vietnam-over-kidnapping-case-090124924.html" target="_blank">yahoo.com</a> · Trục xuất nhà ngoại giao: <a href="https://www.malaymail.com/news/world/2020/02/12/slovakia-expels-vietnamese-diplomat-over-kidnapping/1837016" target="_blank">malaymail.com (Feb 2020)</a></span>
+  </div>
+
+  <div class="fn" id="fn8">
+    <span class="fn-num">[8]</span>
+    <span><span class="fn-label">Tô Lâm "tổ chức vụ bắt cóc" · RFA:</span> "Kidnapping suspect fled to Vietnam to escape arrest" — bản án Nguyễn Hải Long nêu tên Tô Lâm — <a href="https://www.rfa.org/english/news/vietnam/suspect-in-kidnapping-of-vietnamese-businessman-fled-to-vietnam-06082022013734.html" target="_blank">rfa.org</a></span>
+  </div>
+
+  <div class="fn" id="fn9">
+    <span class="fn-num">[9]</span>
+    <span><span class="fn-label">Xử Lê Trọng Khoa 17 năm · The Vietnamese:</span> "Trial in Absentia Ends With 17-Year Prison Sentences for Lê Trung Khoa and Nguyễn Văn Đài" (Jan 2026) — <a href="https://www.thevietnamese.org/2026/01/trial-in-absentia-ends-with-17-year-prison-sentences-for-le-trung-khoa-and-nguyen-van-dai/" target="_blank">thevietnamese.org</a></span>
+  </div>
+
+  <div class="fn" id="fn10">
+    <span class="fn-num">[10]</span>
+    <span><span class="fn-label">Vụ AVG–MobiFone · Hanoi Times:</span> "TV firm chairman detained for allegedly bribery in MobiFone-AVG acquisition deal" (Apr 13, 2019) — <a href="https://hanoitimes.vn/tv-firm-chairman-detained-for-allegedly-bribery-in-mobifone-avg-acquisition-deal-1334.html" target="_blank">hanoitimes.vn</a></span>
+  </div>
+
+  <div class="fn" id="fn11">
+    <span class="fn-num">[11]</span>
+    <span><span class="fn-label">Mức hối lộ · Hanoi Times / Al Jazeera:</span> Phán quyết tháng 12/2019 — <a href="https://hanoitimes.vn/death-sentence-high-jail-terms-announced-at-mobifone-avg-trial-300630.html" target="_blank">hanoitimes.vn</a> · <a href="https://www.aljazeera.com/news/2019/12/vietnam-jails-trinh-xuan-thanh-life-corruption-180122055909420.html" target="_blank">aljazeera.com</a></span>
+  </div>
+
+  <div class="fn" id="fn12">
+    <span class="fn-num">[12]</span>
+    <span><span class="fn-label">Bộ Công an đề nghị khoan hồng cho Phạm Nhật Vũ · VnExpress:</span> "Lighter sentence recommended for main accused in major bribery case" (Sep 4, 2019) — <a href="https://e.vnexpress.net/news/news/lighter-sentence-recommended-for-main-accused-in-6-mln-bribery-case-3977629.html" target="_blank">e.vnexpress.net</a> · Bản án 3 năm: <a href="https://en.vietnamplus.vn/jail-sentences-pronounced-in-mobifone-avg-case-post166279.vnp" target="_blank">vietnamplus.vn (Dec 2019)</a></span>
+  </div>
+
+  <div class="fn" id="fn13">
+    <span class="fn-num">[13]</span>
+    <span><span class="fn-label">Vingroup và "clan Đông Âu" · Fulcrum/ISEAS:</span> "Grooming New Champions: To Lam Prepares for Private Sector-Led Growth in Vietnam" (Aug 2025) — <a href="https://fulcrum.sg/grooming-new-champions-to-lam-prepares-for-private-sector-led-growth-in-vietnam/" target="_blank">fulcrum.sg</a></span>
+  </div>
+
+  <div class="fn" id="fn14">
+    <span class="fn-num">[14]</span>
+    <span><span class="fn-label">Phát ngôn Bộ Công an bác tin đồn về Vượng · Fulcrum/ISEAS:</span> "Will Vietnam's Richest Man Be Safe?" (Jul 2022) — Tô Ân Xô phủ nhận tin đồn — <a href="https://fulcrum.sg/will-vietnams-richest-man-be-safe/" target="_blank">fulcrum.sg</a></span>
+  </div>
+
+  <div class="fn" id="fn15">
+    <span class="fn-num">[15]</span>
+    <span><span class="fn-label">VinSpeed và kiểm duyệt · Asia Times:</span> "Vingroup tests the line of Vietnam's new capitalism" (May 20, 2025) — <a href="https://asiatimes.com/2025/05/vingroup-tests-the-line-of-vietnams-new-capitalism/" target="_blank">asiatimes.com</a></span>
+  </div>
+
+  <div class="fn" id="fn16">
+    <span class="fn-num">[16]</span>
+    <span><span class="fn-label">Cronyism · Fulcrum/ISEAS:</span> "To Lam's Consolidation of Power: Implications for Vietnam's Political and Economic Prospects" (Apr 2026) — <a href="https://fulcrum.sg/to-lams-consolidation-of-power-implications-for-vietnams-political-and-economic-prospects/" target="_blank">fulcrum.sg</a></span>
+  </div>
+
+  <div class="fn" id="fn17">
+    <span class="fn-num">[17]</span>
+    <span><span class="fn-label">Bò dát vàng · RFA:</span> "Vietnamese find top cop's pricey London steak dinner hard to stomach" (Nov 2021) — <a href="https://www.rfa.org/english/news/vietnam/london-steak-11042021200233.html" target="_blank">rfa.org</a></span>
+  </div>
+
+  <div class="fn" id="fn18">
+    <span class="fn-num">[18]</span>
+    <span><span class="fn-label">Phản ứng dư luận · BBC:</span> "Vietnamese minister criticised over 'Salt Bae' gold-plated steak dinner" — <a href="https://feeds.bbci.co.uk/news/world-asia-59174383" target="_blank">bbc.co.uk</a> · Al Arabiya: <a href="https://english.alarabiya.net/News/world/2021/11/07/Vietnamese-minister-under-fire-for-Salt-Bae-golden-steak-dinner-in-London" target="_blank">alarabiya.net</a></span>
+  </div>
+
+  <div class="fn" id="fn19">
+    <span class="fn-num">[19]</span>
+    <span><span class="fn-label">Marx → Salt Bae · Vice:</span> "A Communist Delegation Went to Karl Marx's Grave, Then Were Fed Gold Steak by Salt Bae" — <a href="https://www.vice.com/en/article/gold-steak-salt-bae-vietnam/" target="_blank">vice.com</a></span>
+  </div>
+
+  <div class="fn" id="fn20">
+    <span class="fn-num">[20]</span>
+    <span><span class="fn-label">Bùi Tuấn Lâm bị kết án · CNN:</span> "Vietnam police summon noodle seller after 'Salt Bae' parody video" — <a href="https://edition.cnn.com/2021/11/17/asia/vietnam-police-salt-bae-intl-hnk-scli/index.html" target="_blank">cnn.com</a> · BBC: <a href="https://feeds.bbci.co.uk/news/world-asia-59328904" target="_blank">bbc.co.uk</a></span>
+  </div>
+
+  <div class="fn" id="fn21">
+    <span class="fn-num">[21]</span>
+    <span><span class="fn-label">Tự do báo chí · RSF:</span> "One year into his rule, Vietnamese leader To Lam continues his all-out war on independent journalism" (Aug 1, 2025) — <a href="https://rsf.org/en/one-year-his-rule-vietnamese-leader-lam-continues-his-all-out-war-independent-journalism" target="_blank">rsf.org</a></span>
+  </div>
+
+  <div class="fn" id="fn22">
+    <span class="fn-num">[22]</span>
+    <span><span class="fn-label">Nhà nước công an trị · Human Rights Watch:</span> "World Report 2025: Vietnam" — <a href="https://www.hrw.org/world-report/2025/country-chapters/vietnam" target="_blank">hrw.org</a> · Al Jazeera: <a href="https://www.aljazeera.com/opinions/2024/6/19/beware-of-vietnams-new-authoritarian-president" target="_blank">"Beware of Vietnam's new authoritarian president"</a></span>
+  </div>
+
+  <div class="fn" id="fn23">
+    <span class="fn-num">[23]</span>
+    <span><span class="fn-label">Thu hẹp không gian dân sự · Red Flag (Úc):</span> "To Lam: Vietnam's new exploiter in chief" (Apr 2026) — <a href="https://redflag.org.au/article/to-lam-vietnams-new-exploiter-in-chief/" target="_blank">redflag.org.au</a></span>
+  </div>
+
+  <div class="fn" id="fn24">
+    <span class="fn-num">[24]</span>
+    <span><span class="fn-label">Ngoại giao · Tổng hợp nhiều nguồn:</span> Singapore (Mothership, Mar 2025): <a href="https://mothership.sg/2025/03/singapore-vietnam-comprehensive-strategic-partnership/" target="_blank">mothership.sg</a> · UK GOV.UK (Oct 2025): <a href="https://www.gov.uk/government/news/pm-meeting-with-general-secretary-to-lam-of-vietnam-29-october-2025" target="_blank">gov.uk</a> · Trung Quốc (Xinhua, Apr 2026): <a href="https://english.news.cn/20260409/5eeae74ae5a244d180ed5ac97f37fd12/c.html" target="_blank">xinhua</a></span>
+  </div>
+
+</div>
+</body>
+</html>
