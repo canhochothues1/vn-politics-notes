@@ -1,9 +1,16 @@
 [
   {
-    "file": "tolam-profile.html",
+    "file": "Tolam-proflie.html",
     "title": "Tô Lâm — Chân dung qua báo chí nước ngoài",
-    "desc": "Phân tích hành trình chính trị của Tô Lâm từ Bộ Công an đến ghế Tổng Bí thư — những liên minh, thanh trừng, và cái giá phải trả.",
+    "desc": "Phân tích hành trình chính trị của Tô Lâm...",
     "tag": "Hồ sơ",
     "date": "1 tháng 6, 2025"
+  },
+  {
+    "file": "buonlau-kimcuong-oVN-chuyen-cuahang-KimLy.html",
+    "title": "Buôn lậu Kim Cương Ở VN và chuyện cửa hàng Kim Lý",
+    "desc": "Nhằm đưa ra overview của người trong ngành về kim cương buôn lậu tại VN như thế nào",
+    "tag": "Phân tích",
+    "date": "10 tháng 6, 2025"
   }
 ]
