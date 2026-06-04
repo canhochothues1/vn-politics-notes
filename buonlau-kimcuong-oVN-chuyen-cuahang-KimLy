@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ba Tháng Làm Phiên Dịch Cho Đường Dây Kim Cương Lậu Ấn Độ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --border: #2a2a2a;
+    --accent: #c8a96e;
+    --accent2: #e8c97e;
+    --text: #d4cfc8;
+    --text-muted: #7a7570;
+    --text-bright: #f0ebe2;
+    --red: #c0392b;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .site-tag span {
+    color: var(--accent);
+  }
+
+  .header-date {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .category-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text-bright);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-style: italic;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 640px;
+  }
+
+  .meta-bar {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .meta-item {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .meta-item span {
+    color: var(--text);
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-number {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    min-width: 2rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin: 2.5rem 0 1rem;
+    font-style: italic;
+  }
+
+  p {
+    margin-bottom: 1.4rem;
+    color: var(--text);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  strong {
+    color: var(--text-bright);
+    font-weight: 600;
+  }
+
+  em { color: var(--accent2); font-style: italic; }
+
+  /* SUPPLY CHAIN DIAGRAM */
+  .chain {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin: 2rem 0;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    line-height: 2.2;
+    color: var(--text-muted);
+  }
+
+  .chain-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .chain-step .label {
+    color: var(--text-bright);
+  }
+
+  .chain-step .desc {
+    color: var(--text-muted);
+  }
+
+  .chain-arrow {
+    color: var(--accent);
+    padding-left: 0.5rem;
+  }
+
+  /* BLOCKQUOTE */
+  blockquote {
+    background: var(--bg2);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text);
+    position: relative;
+  }
+
+  blockquote::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.3;
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    line-height: 1;
+  }
+
+  /* CALLOUT BOXES */
+  .callout {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+  }
+
+  .callout.warning {
+    border-color: var(--red);
+    border-left-width: 3px;
+  }
+
+  .callout.info {
+    border-color: var(--accent);
+    border-left-width: 3px;
+  }
+
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .callout.warning .callout-label {
+    color: var(--red);
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, #1a1508 0%, #0d0d0d 100%);
+    border: 1px solid #3a3020;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .highlight-box p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  /* CONCLUSION LIST */
+  .conclusion-list {
+    list-style: none;
+    margin: 1.5rem 0;
+  }
+
+  .conclusion-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text);
+  }
+
+  .conclusion-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    top: 1.1rem;
+  }
+
+  .conclusion-list li:last-child { border-bottom: none; }
+
+  /* INLINE NOTES */
+  sup {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--accent);
+    cursor: default;
+  }
+
+  sup a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  sup a:hover { text-decoration: underline; }
+
+  /* FOOTNOTES */
+  .footnotes {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  .footnotes-title {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .footnote-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    align-items: baseline;
+  }
+
+  .footnote-num {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 0.65rem;
+    min-width: 1.5rem;
+  }
+
+  .footnote-item a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .footnote-item a:hover { text-decoration: underline; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.75rem;
+    margin: 3rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  /* DIAMOND SEPARATOR */
+  .diamond-sep {
+    text-align: center;
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    padding: 1rem 0;
+    opacity: 0.4;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  footer span { color: var(--accent); }
+
+  /* SCROLL ANIMATION */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .hero { padding: 3rem 1.5rem 2rem; }
+    .content { padding: 0 1.5rem; }
+    .meta-bar { flex-wrap: wrap; gap: 1rem; }
+    h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-tag">Cluster <span>G</span> — Báo cáo điều tra</div>
+    <div class="header-date">Tháng 6, 2026</div>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="category-tag">Điều tra · Kim cương · Tài chính ngầm</div>
+  <h1>Ba Tháng Làm Phiên Dịch Cho Đường Dây Kim Cương Lậu Ấn Độ <em>— Và Chuyện Bà Kim Lý</em></h1>
+  <p class="subtitle">Tui từng làm phiên dịch freelance cho một ông người Ấn Độ chuyên tuồn kim cương lậu vào Việt Nam. Mất ba tháng tui mới hiểu mình đang ngồi ở đâu trong cái bàn cờ đó. Bài này tui kể lại từ đầu — bao gồm cả màn thao túng từ từ, cái bẫy của nghề tự do, và tại sao mấy điều bà Nguyễn Phương Hằng nói về kim cương lại không sai.</p>
+  <div class="meta-bar">
+    <div class="meta-item">Tác giả<span>Ẩn danh</span></div>
+    <div class="meta-item">Thời gian<span>3 tháng thực địa</span></div>
+    <div class="meta-item">Trạng thái<span>Đường dây vẫn hoạt động</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- SECTION 1 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <h2>Công Việc Trông Bình Thường Lắm</h2>
+    </div>
+
+    <p>Tuyển dụng nói là phiên dịch. Lương tính theo giờ, cao hơn mặt bằng thị trường. Ông chủ — gọi tắt là Sanjay — người Ấn Độ, nói tiếng Anh lịch sự, ăn mặc đàng hoàng, sống ở chung cư Khánh Hội. Công việc nghe thật đơn giản: theo ổng đến các tiệm vàng bạc đá quý ở quận 5, phiên dịch khi chủ tiệm cần trao đổi về hàng. Thỉnh thoảng dịch qua điện thoại khi deal giá. Mỗi deal thành công tui còn được thêm 1% hoa hồng.</p>
+
+    <p>Không có gì đáng ngờ ở giai đoạn đầu — ít nhất là theo mắt của một người chưa biết ngành này vận hành như thế nào.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <h2>Ấn Độ Và Kim Cương: Không Phải Chuyện Mới</h2>
+    </div>
+
+    <p>Trước khi nói tiếp, cần hiểu tại sao người Ấn Độ lại đứng đầu trong ngành kim cương thế giới.</p>
+
+    <p>Ấn Độ từng là nơi duy nhất trên trái đất có mỏ kim cương, hoạt động liên tục gần 2.000 năm từ khoảng thế kỷ thứ 3 trước Công nguyên cho đến tận thế kỷ 18.<sup><a href="#fn1">[1]</a></sup> Khi các mỏ lớn ở châu Phi và Nga được phát hiện, hàng không còn xuất phát từ Ấn Độ nữa — nhưng đường đi vẫn vòng qua đây. Lý do: kỹ thuật mài và đánh bóng. Thành phố Surat ở bang Gujarat hiện là trung tâm gia công kim cương lớn nhất hành tinh, nơi khoảng 92% kim cương thô trên toàn thế giới được cắt và đánh bóng trước khi xuất đi các thị trường như Bỉ, Dubai, Hồng Kông, Singapore.<sup><a href="#fn2">[2]</a></sup> Hơn 300.000 thợ kim hoàn làm việc ở đây, tạo ra doanh thu mỗi năm hàng tỷ đô.<sup><a href="#fn3">[3]</a></sup></p>
+
+    <p>Mạng lưới thương mại kim cương của người Ấn Độ — đặc biệt cộng đồng Gujarati — hoạt động theo kiểu gia tộc, tin tưởng nội bộ, khó người ngoài len vào. Rất giống mạng lưới người Hoa ở Đông Nam Á. Và chính cái mạng lưới đó tạo ra nền tảng cho phần chìm của thị trường — hàng xách tay, không thuế, không khai báo.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <h2>Chuỗi Cung Ứng Lậu Vào Việt Nam Trông Như Thế Nào</h2>
+    </div>
+
+    <p>Từ những gì tui quan sát và nghe được trong ba tháng đó, chuỗi vận hành khá bài bản:</p>
+
+    <div class="chain">
+      <div class="chain-step"><span class="label">Khai thác</span><span class="desc">— Châu Phi (Angola, Botswana, Namibia), Nga, Canada</span></div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-step"><span class="label">Giao dịch thô</span><span class="desc">— Antwerp / Dubai</span></div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-step"><span class="label">Cắt gọt & đánh bóng</span><span class="desc">— Surat, Ấn Độ (92% sản lượng thế giới)</span></div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-step"><span class="label">Tập kết trung gian</span><span class="desc">— Hồng Kông / Thái Lan / Malaysia</span></div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-step"><span class="label">Vào Việt Nam</span><span class="desc">— Tiếp viên hàng không, khách du lịch trà trộn, đường tàu lửa</span></div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-step"><span class="label">Bán hàng</span><span class="desc">— Tiệm vàng quận 5, tiền mặt 100%</span></div>
+    </div>
+
+    <p><strong>Xuất phát điểm:</strong> Kim cương thô được khai thác chủ yếu ở châu Phi và Nga, sau đó chuyển về Surat để mài, đánh bóng.<sup><a href="#fn4">[4]</a></sup></p>
+
+    <p><strong>Tập kết trung gian:</strong> Sau khi gia công xong, hàng được phân phối qua các trung tâm tài chính như Hồng Kông, Thái Lan, Malaysia — những nơi logistics thuận lợi và kiểm soát hải quan dễ qua hơn.</p>
+
+    <p><strong>Vào Việt Nam:</strong> Các tiếp viên hàng không hoặc người trà trộn làm khách du lịch là kênh vận chuyển chính. Đường bay Thái Lan – Việt Nam có chuyến đều đặn hàng tuần. Kim cương là dạng carbon, không giống vàng hay kim loại, khó bị máy quét X-quang thông thường phát hiện. Kích thước nhỏ nên có thể giấu trong tóc, giày dép, quần áo, hoặc thậm chí nuốt vào bụng. Thủ đoạn cũ là giấu trong hành lý xách tay — nhưng khi các sân bay lớn nâng cấp máy soi, tụi nó chuyển sang dùng sân bay nhỏ hoặc đi tàu lửa vì tàu hỏa ở Việt Nam không có máy kiểm tra hành lý.</p>
+
+    <div class="callout info">
+      <div class="callout-label">Bằng chứng từ báo chí</div>
+      <p>Chỉ trong một tuần tháng 10/2024, hải quan Tân Sơn Nhất bắt liên tiếp hai vụ: một người Ấn Độ giấu 716 viên kim cương trong bánh và ví, một người khác giấu 362 viên dưới đáy hộp kẹo nhập từ Hồng Kông.<sup><a href="#fn5">[5]</a><a href="#fn6">[6]</a></sup> Và theo lời khai của bị can trong vụ 362 viên, ổng đã thực hiện từ 6–7 chuyến vận chuyển trước khi bị bắt — nghĩa là đa số chuyến đều trót lọt.<sup><a href="#fn7">[7]</a></sup>
+      </p>
+    </div>
+
+    <p><strong>Giao nhận:</strong> Sanjay mô tả cho tui nghe một hệ thống xác nhận khá tinh vi: khi người mang hàng đến, ổng gửi ảnh chụp một tờ tiền bản địa với số seri cụ thể. Chỉ ai xuất trình đúng tờ tiền đó mới nhận được hàng. Cách này cho phép ổng cử bất kỳ ai đi nhận mà không cần cả hai bên biết mặt nhau — giảm tối đa rủi ro nếu một mắt xích bị bắt.</p>
+
+    <p><strong>Lưu kho:</strong> Kim cương không được giữ tại nhà Sanjay. Ổng có một mạng lưới khoảng 3–4 người Ấn Độ khác ở Sài Gòn luân phiên giữ hàng và tiền. Khi khách cần, ổng mới đi lấy. Cách này đảm bảo nếu công an ập vào nhà ổng, sẽ không tìm thấy tang vật gì.</p>
+
+    <p><strong>Bán hàng:</strong> Phần lớn khách hàng là chủ tiệm vàng quận 5 — khu người Hoa. Họ đặt hàng theo yêu cầu cụ thể: cần viên 10mm loại này, màu kia. Giao dịch hoàn toàn tiền mặt — tiền Việt, USD. Giá đầu nậu bán cho chủ tiệm thấp hơn thị trường chính hãng rất nhiều, vì không thuế, không chi phí nhập khẩu hợp lệ. Ra đến tay người tiêu dùng, giá đội lên 2–3 lần so với giá nhập lậu.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <h2>Vỏ Bọc Hợp Pháp</h2>
+    </div>
+
+    <p>Điều làm tui ngạc nhiên nhất là ổng không hoàn toàn hoạt động trong bóng tối. Sanjay có thuê một luật sư người Việt tên Thảo để mở công ty có mã số thuế, có tài khoản ngân hàng hợp lệ tại Việt Nam. Đồng thời, bà Thảo này cũng đóng vai trò môi giới kim cương cho các quan chức và người giàu muốn mua kim cương như một dạng thể hiện đẳng cấp.</p>
+
+    <p>Công ty này đóng thuế một phần — tức là vẫn có thể xuất hóa đơn, có giấy tờ hàng hóa hợp lệ cho một số lô hàng. Nhưng phần lớn kim cương lậu thì thu tiền mặt, không khai báo. Hàng lậu lời hơn nhiều: chi phí thấp, không thuế, dễ tiếp cận nguồn hàng rẻ. Vỏ bọc hợp pháp chỉ để che mắt, không phải cốt lõi của business.</p>
+
+    <p>Về chuyển tiền ra nước ngoài: ổng dùng bitcoin, vì các kênh chuyển tiền quốc tế truyền thống ngày càng bị siết chặt. Phí chuyển tiền lậu kiểu này khoảng 1–3% giá trị giao dịch.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <h2>Thao Túng Từ Từ — Bài Học Của Người Làm Freelance</h2>
+    </div>
+
+    <p>Đây là phần tui muốn kể nhất.</p>
+
+    <p>Không ai từ đầu nói thẳng với tui là "mày đang giúp tụi tao buôn lậu." Tất cả đều từ từ. Sanjay rất khéo — dẫn đi ăn nhà hàng, mời về nhà ăn tối, hay nói "tao xem mày như em gái." Xây dựng tình cảm trước, rồi mới nhờ vả. Kiểu nhờ cũng nhẹ nhàng, từng việc nhỏ một, và lúc nào cũng kèm theo câu kiểu: <em>"Chuyện này không có gì sai cả, không giết ai, không làm hại ai, chỉ là kinh doanh thôi."</em></p>
+
+    <p>Ổng ưa thuê con gái trẻ vì dễ sai hơn. Ai nhiệt tình, dễ dãi, hay giúp đỡ — sẽ bị ổng khai thác đúng những đức tính đó. Một trong những việc ổng hay nhờ người Việt làm là nhận và chuyển tiền qua tài khoản cá nhân — những giao dịch từ 40 đến 250 triệu đồng một lần. Người làm không biết mình đang là mắt xích trong đường dây rửa tiền.</p>
+
+    <div class="callout warning">
+      <div class="callout-label">Cảnh báo — Bẫy freelance</div>
+      <p>Đây là cái bẫy rất phổ biến với người làm freelance: thu nhập tốt, công việc nghe có vẻ ổn, sếp dễ chịu, không ai ép mình làm gì trái pháp luật một cách lộ liễu. Tới khi nhận ra thì mình đã biết quá nhiều và đã dính dáng không ít.</p>
+    </div>
+
+    <p>Tui nghỉ sau ba tháng, ngay khi hiểu đủ chuyện để thấy mình không thể tiếp tục. May mắn là tui chưa bị nhờ làm gì phạm pháp trực tiếp — nhưng rất nhiều người khác không nhận ra ranh giới đó sớm như vậy.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">06</div>
+      <h2>Vụ Kim Lý Và Bà Hằng — Nói Thẳng Thôi</h2>
+    </div>
+
+    <p>Thị trường kim cương ở Việt Nam vốn đã không trong sạch từ đáy lên. Hàng đa phần là xách tay không thuế — các tiệm quận 5 đặt hàng qua đầu nậu, nhận qua đường phi chính thức. Vậy mà tiệm nào cũng có giấy kiểm định, có chứng nhận, trông rất chuyên nghiệp.</p>
+
+    <p>Chuyện tiệm Kim Lý bị bà Nguyễn Phương Hằng bóc phốt nổ ra gần đây mang theo chi tiết mà người trong nghề nghe là hiểu ngay: giấy kiểm định GIA thật, nhưng viên kim cương giao cho khách là viên khác — chất lượng thấp hơn nhiều, thậm chí có thể là hàng bệnh hoặc nhân tạo. Kỹ thuật thực hiện là khắc lại mã số của viên thật lên viên giả bằng laser — để khi khách tra mã lên hệ thống thì ra đúng thông tin của viên kim cương xịn. Để đọc được cái mã khắc đó, cần một cái máy chuyên dụng mà người trong nghề mua khoảng 6–7 triệu để zoom kích thước viên đá lên x60 lần, mắt thường không thể thấy được.<sup><a href="#fn8">[8]</a></sup></p>
+
+    <p>Làm được chuyện này đòi hỏi sự cấu kết giữa chủ tiệm và trung tâm kiểm định — không thể một mình làm được. Đây không phải nhầm lẫn hay sơ suất. Đây là gian lận có hệ thống.</p>
+
+    <p>Theo thông tin lan truyền trên các diễn đàn, thủ thuật cụ thể là lấy mã số của viên kim cương thật trên giấy GIA thật, dùng mã đó khắc lên viên kim cương kém chất lượng hơn, rồi giao viên giả kèm giấy thật cho khách.</p>
+
+    <p>Chủ tiệm Kim Lý — bà Lê Hoàng Ngọc Mỹ — lên tiếng với báo chí khẳng định tiệm làm ăn chân chính và hoạt động kinh doanh vẫn bình thường, chưa trình báo công an vì chưa thấy có vấn đề gì.</p>
+
+    <div class="diamond-sep">◆ ◆ ◆</div>
+
+    <p>Thực ra bà Hằng và bà Kim Lý không phải hai bên trắng đen rõ ràng. Theo câu chuyện xoay vần lại, có thông tin cho rằng thông gia nhà bà Hằng dính đến chuyện cờ bạc, nợ nần — con dâu bả phải đem kim cương đi cầm hết 300 triệu. Bả chuộc về phát hiện nó bị nứt, sau đó mới gây với chủ tiệm, không trả luôn 200k USD chưa thanh toán với lý do hàng không đạt chất lượng. Bà Kim Lý nói xấu sau lưng rồi lời qua tiếng lại tới tai bà Hằng — người vốn không phải dạng nhịn. Thế là nổ ra. <em>(Nguồn: livestream ngày 3/6/2026)</em></p>
+
+    <h3>Tại sao bóc phốt lại nổ ra lúc này?</h3>
+
+    <p>Thuyết âm mưu là bà này nói theo ý tuyên giáo, lúc trước không nói vì mạng lưới lợi ích gắn chặt với nhau. 400 tỷ mà bả dùng để mua kim cương từ 10 năm về trước — chắc chắn bả không phải người thường, tiền đó ở đâu mà có? Người giàu ở Việt Nam không ai muốn livestream khoe giàu thật, vì tiền bạc nhiều mức này nếu không lừa đảo thì phải chơi game chính trị mới có. Đứa cháu ông Nguyễn Xuân Phúc chụp ảnh tài khoản với số dư hơn 300 tỷ lên Instagram đã làm người ta dậy sóng đến mức nào. Khả năng là bả được bảo kê và phát ngôn theo ý ai đó để làm xao lãng vụ giải tỏa sông Hồng. Thứ hai là bả đang ở nước ngoài rồi, bả cũng chẳng sợ bị bỏ tù nữa — bả đang đổi lấy sự ảnh hưởng để định hướng dư luận, trao đổi lợi ích với chính quyền.</p>
+
+    <p>Vụ xảy ra với ông Minh Tuệ cho thấy bà này đã gây mất lòng tin của số đông từ lúc đó. Có lẽ vụ này là phép thử. Việc một lô các kênh YouTube đăng lại livestream của bà Hằng cũng có vấn đề — liệu đây có phải là đội quân do các agency chạy nhằm khuếch đại tiếng nói của bả? Ngoại trừ những người mua kim cương ở Q5 có lợi ích liên can, ai lại quan tâm đến vụ này?</p>
+
+    <div class="highlight-box">
+      <p><strong>Điều rút ra vụ này:</strong></p>
+      <p>▸ Nên tiếp nhận thông tin của bà Hằng một cách tỉnh táo, đặt câu hỏi về động cơ của bả — tại sao bóc phốt và tại sao lại lúc này, thế lực nào đứng sau bả?</p>
+      <p>▸ Không nên mất thời gian coi livestream. Những gì bả nói khi đưa qua AI để lọc thì thực chất chẳng có lập luận nào đáng kể, đa số là small talk drama vô giá trị — chỉ có vài thông tin mà kéo ra tận một cái livestream 1 tiếng rưỡi nhằm tiêu hao năng lượng của người nghe. Trong khi đó xăng E10 và giải tỏa sông Hồng mới là chuyện thật sự ảnh hưởng đến cuộc sống mọi người.</p>
+      <p>▸ Không nên mua kim cương mà không hiểu rõ, khi chỉ tin vào "uy tín" một ai đó. Hoài Linh trước khi bị tung sao kê cũng sống chết lấy uy tín ra thề. Thực tế cho thấy uy tín chỉ còn khi lợi ích chưa đủ lớn.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">07</div>
+      <h2>Moissanite, Kim Cương Nhân Tạo Và Kim Cương Tự Nhiên</h2>
+    </div>
+
+    <h3>Moissanite — Trò Lập Lờ Trên Shopee</h3>
+
+    <p>Chuyện bán đá moissanite núp bóng "kim cương" trên các sàn thương mại điện tử là một dạng đánh lận con đen nhắm vào tệp khách không có kiến thức.</p>
+
+    <p><strong>Moissanite</strong> là khoáng vật Silicon Carbide, được dùng làm đá quý thay thế kim cương. Dù có bề ngoài giống kim cương, moissanite lấp lánh hơn (do có độ chiết suất cao hơn), nhưng giá thành chỉ bằng khoảng 1/10 đến 1/15 và không có giá trị đầu tư, bán lại. Cùng đạt độ cứng tương đương nên dùng bút thử thì đều đạt, nhưng khi đưa vào máy soi kiểm định chuyên sâu thì lại khác về bản chất.</p>
+
+    <p>Moissanite rẻ hơn kim cương rất nhiều — giá sỉ đá nhỏ có khi chỉ vài trăm đồng đến vài chục ngàn đồng. Tui từng gửi bảng giá sỉ cho cửa hàng nên tui biết, không ngờ nó rẻ đến thế. Đây là hai loại đá hoàn toàn khác nhau về bản chất, dù trông gần giống nhau khi nhìn bằng mắt thường.</p>
+
+    <p>Đá moi không phải kim cương nhưng gian thương vẫn để tiêu đề "kim cương moissanite" bán ra với giá tiền triệu, gấp trăm lần giá vốn nguyên liệu. Đâu cần phải bán viên đá to mới có nhiều tiền — bán đá nhỏ cũng có thể lời nhiều, chính là ở chỗ này.</p>
+
+    <h3>Kim Cương Nhân Tạo (Lab-Grown)</h3>
+
+    <p>Không có giá trị bán lại, giá thấp hơn — chỉ khoảng 10–20% kim cương tự nhiên — nhưng có giấy IGI, đẹp y hệt. Mọi người nên mua loại này vì giá trị nhân đạo: mua đeo cho đẹp, cho vui, như một món trang sức chứ không phải sản phẩm tài chính. Nếu muốn tích lũy thì cứ mua vàng. Chỉ là khi đi soi kiểm định thì sẽ phát hiện ra dấu vết đặc trưng của kim cương nuôi cấy trong phòng lab.</p>
+
+    <h3>Kim Cương Tự Nhiên</h3>
+
+    <p>Hoàn toàn có giá trị bán lại, nhưng không phải là tài sản có tính thanh khoản cao và dễ dàng quy đổi thành tiền mặt như vàng. Khi bán lại, người mua thường chịu mức lỗ dao động từ <strong>30% đến 50%</strong> so với giá trị mua mới tại cửa hàng, tùy thuộc vào thời giá và địa chỉ thu mua.</p>
+
+    <h3>Thuyết Âm Mưu De Beers Và Nguồn Gốc Đẫm Máu</h3>
+
+    <p>Một trong những mô hình độc quyền (cartel) thành công nhất lịch sử nhân loại: từ năm 1888 đến cuối thế kỷ XX, De Beers kiểm soát tới <strong>90% sản lượng kim cương thô</strong> trên toàn cầu ở thời đỉnh cao — trước khi những mỏ ở Nga, Canada và Úc được tìm thấy. Ấn Độ là trung tâm chế tác đánh bóng 90% sản lượng kim cương thô của thế giới, nên những chiêu trò thao túng nguồn cung và định giá đó hiện vẫn được tiếp tục theo cách khác.</p>
+
+    <p>Kim cương vì giá trị cao và đem qua biên giới rất nhẹ nên nó cũng đóng vai trò tiền tệ trong mua bán vũ khí và rửa tiền (Ngân hàng ngầm Hawala), tài trợ xung đột — trực tiếp dùng kim cương để đổi vũ khí vì nó vô hình trước các máy quét kim loại.</p>
+
+    <p>Không nên tôn sùng nguồn gốc tự nhiên đắt đỏ của nó, vì những vụ như Blood Diamond và bóc lột trẻ em vẫn đang xảy ra ở châu Phi. Một chiếc nhẫn không nên là bảo hộ cho hạnh phúc — hoàn toàn có thể chọn Sapphire, Emerald, Ruby thay thế, hoặc kỷ vật của hai người không nhất thiết phải là kim cương.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">08</div>
+      <h2>Mô Hình Tài Chính Của Bà Kim Lý — Và Tại Sao Nó Sụp</h2>
+    </div>
+
+    <p>Tại sao đá moi và kim cương nhân tạo không có giá trị bán lại, mà các cửa hàng vẫn nhận thu mua với mức giá 50–70% giá trị ban đầu? Đây là một game tài chính, đánh cược với lý do uy tín và bao tiêu đầu ra — người mua sẽ an tâm mua với lý do bán lại được thì vẫn còn 50–70% giá trị.</p>
+
+    <p>Trên thế giới chỉ có kim cương tự nhiên mới có giá trị bán lại và giá cũng bị sụt 50% giá trị lúc mua chưa kể bị hao mòn sứt mẻ.</p>
+
+    <p>Khi bà Hằng tung video bóc phốt và kêu gọi người từng mua đem ra bán lại, cơ chế sụp đổ bắt đầu hiện ra. Thực ra mô hình thu mua kim cương với giá 50% là mô hình tài chính huy động vốn — kiểu như một ngân hàng thu nhỏ không phép. Bà Kim Lý đưa ra lời hứa (cam kết mua lại), hút tiền vào (người mua tin tưởng trả giá cao), và chỉ cần dòng tiền mới liên tục đổ vào thì hệ thống không bị lộ.</p>
+
+    <p>Khi lòng tin sụp — khi hàng trăm người cùng lúc kéo đến đòi bán lại — không ngân hàng nào đứng vững được, huống chi một tiệm vàng. Chủ tiệm Kim Lý xác nhận trong một số trường hợp có viết giấy hẹn từ 1 đến 2 tuần khi khách mang kim cương đến bán, thay vì thanh toán liền. Lúc đầu bả cũng cố gắng duy trì mua lại, nhưng sau 2 ngày, bả không thu lại nữa vì hết tiền.</p>
+
+    <p>Vụ này gợi nhớ đến ngân hàng SCB của bà Lan Vạn Thịnh Phát và ông Kiên đầu bạc với ngân hàng ACB — hàng ngàn người đi rút tiền đợt đó, nhà nước phải can thiệp cứu. Còn tư nhân Kim Lý thì ai cứu?</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">09</div>
+      <h2>Những Người Làm Tay Sai Không Biết Mình Là Tay Sai</h2>
+    </div>
+
+    <p>Quay lại chuyện Sanjay. Ổng rất cẩn thận về việc giữ tay sạch. Tất cả những việc có rủi ro pháp lý — nhận hàng, chuyển tiền, đứng tên giấy tờ — đều được đẩy cho người khác làm. Người vận chuyển kim cương thường đến từ các nước nghèo hơn, chấp nhận rủi ro để lấy khoản tiền công 1–1,5% giá trị lô hàng.<sup><a href="#fn9">[9]</a></sup></p>
+
+    <p>Còn ở Việt Nam, các đường dây rửa tiền thường lôi kéo học sinh, sinh viên mở hoặc cho thuê tài khoản ngân hàng bằng những lời quảng cáo "việc nhẹ lương cao," "cho thuê tài khoản," "nhận tiền giùm." Sau khi tiếp cận được, chúng yêu cầu cung cấp thẻ ATM, mật khẩu Internet Banking, mã OTP để kiểm soát dòng tiền lừa đảo hoặc rửa tiền. Bộ Công an đã nhiều lần cảnh báo hành vi này có thể bị truy cứu trách nhiệm hình sự.</p>
+
+    <p>Sanjay cũng làm y vậy — dùng số tài khoản của những người tin tưởng hoặc ngây thơ để luân chuyển tiền mặt. Ai dễ dãi, nhiệt tình, hay giúp đỡ là trở thành công cụ mà không hay biết.</p>
+
+    <p>Một hệ thống những người Việt làm money mule cho họ: cầm tiền mặt đến với một mã số, bên nhận chỉ cần đưa ra mã số là nhận tiền, số tiền lên đến vài trăm triệu mỗi tháng, hoàn toàn ẩn danh khỏi hệ thống ngân hàng.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <h2>Người Giàu Ở Việt Nam</h2>
+    </div>
+
+    <h3>"Cú Bắt Tay" Nghìn Tỷ Và Quá Khứ Của Đại Gia Dũng "Lò Vôi"</h3>
+
+    <p>Câu chuyện tiếp tục đổ dồn vào khối tài sản khổng lồ của vợ chồng bà Hằng – ông Dũng "lò vôi". Để kiếm được 400 tỷ kinh doanh, nếu làm ăn đàng hoàng trừ hết thuế má lời 5% (1 tỷ lời 50 triệu) thì không biết làm đến bao giờ mới đủ.</p>
+
+    <p>Cư dân mạng đã lật lại lịch sử 30 năm trước tại khu vực Thủ Đức – Bình Dương gắn liền với cái tên Dũng "lò vôi" và công ty Thành Lễ:</p>
+
+    <p><strong>Xuất thân:</strong> Ông Dũng ban đầu là lính bộ đội, sau làm lò vôi. Ông phất lên nhờ tiếp quản cơ sở sơn mài của một nhà tư bản tên Thành Lễ (có nghi vấn cho rằng đây là danh nghĩa chiếm đoạt). Tuy nhiên, ngành sơn mài không thể mang lại vài ngàn tỷ nếu không có "game" bất động sản. Ông Dũng đã ôm nhiều đất Bình Dương, thông qua quan hệ dây mơ rễ má với nguồn gốc đỏ, gặp đúng thời kỳ tỉnh trải thảm đỏ đón nhà máy, từ đó trúng chủ trương làm toàn bộ cụm KCN Linh Xuân, Sóng Thần. Mà để trúng được chủ trương thì… ai biết tình hình Việt Nam tự suy ra những góc khuất sau đó nha — giá đất 0 đồng bán ra cả ngàn lần, lấy gì không giàu.</p>
+
+    <p><strong>Gia thế nhà vợ:</strong> Tin đồn từ các tiểu thương ngoài chợ từ 20 năm trước cho biết ông Dũng thực chất là rể nhà Thành Lễ. Ông được ví như một "Jonathan Hạnh Nguyễn" thứ hai — tận dụng lợi ích từ nhà vợ để lớn mạnh rồi cá lớn nuốt cá bé, bỏ vợ cũ để tìm vợ mới, sau khi đã húp đẫm lợi ích.</p>
+
+    <p><strong>Mối liên kết:</strong> Sự giàu có này được nhận định là kết quả từ "cú bắt tay giữa chủ nghĩa tư bản và cơ chế chính trị," giúp doanh nghiệp như hổ mọc thêm cánh, thâu tóm tiền bạc mà người thường không cửa nào đấu lại.</p>
+
+    <h3>Quá Khứ Của Bà Hằng Và Góc Nhìn Về "Nghiệp Quả"</h3>
+
+    <p>Bà Hằng cũng không đứng ngoài các tin đồn khi bị nhắc lại nghi vấn từng là bồ nhí của đàn em Năm Cam, làm "trà xanh" giật chồng để lên chính thất. Khối tài sản bà có được cho là gom góp từ mấy đời chồng trước, kết hợp với ông Dũng tạo thành cặp đôi "giang hồ gặp bảo kê." Việc bà chuẩn bị sẵn quốc tịch từ sớm cho thấy sự tính toán đường hậu trước các rủi ro pháp lý — động thái của một người chột dạ, biết trước những điều bà làm chẳng hề sạch sẽ như những gì bà tuyên bố trên livestream.</p>
+
+    <p>Mặc dù vậy, một số ý kiến vẫn dành sự tôn trọng cho bà Hằng vì những đóng góp thực tế:</p>
+
+    <ul class="conclusion-list">
+      <li><strong>Quỹ Hằng Hữu:</strong> Thành lập năm 2014 (đặt theo tên con trai út sinh năm 2012 của bà và ông Dũng). Quỹ này đã giúp đỡ rất nhiều cho TP.HCM và những người thiếu may mắn. Dù có ý kiến cho rằng bà làm từ thiện để "giải nghiệp," không thể phủ nhận lợi ích nó mang lại.</li>
+      <li><strong>Cách dùng người:</strong> Những người từng làm việc cho bà Hằng chưa một ai phản bội bả — minh chứng cho tư cách làm chủ.</li>
+      <li><strong>Thành tích xã hội:</strong> Vạch trần được vụ hoài nghi ăn chặn từ thiện của nghệ sĩ Hoài Linh (HL14), bất chấp việc Hoài Linh từng thuê bot khẩu chiến dữ dội trên mạng.</li>
+    </ul>
+
+    <blockquote>
+      Suy cho cùng, giới tài phiệt sở hữu tài sản trên trăm tỷ tại Việt Nam hay phương Tây đều có những góc khuất "tay dính bùn." Nhiều đại gia lớn như Trịnh Văn Quyết xui xì thì bị bắt, số khác đã kịp hạ cánh an toàn sang xứ tư bản. Ngay cả các cựu Ủy viên Bộ Chính trị, cựu Bí thư Thành ủy, Tư lệnh ngành giao thông sa cơ còn bị lôi ra tòa hết lần này đến lần khác. Việc bà Hằng đi tù tuy có phần oan ức dưới góc nhìn của người ủng hộ, nhưng xét về đường dài, đó âu cũng là quy luật "của thiên trả địa." Bây giờ bà không thể về Việt Nam, xa chồng xa con, thèm tô bún mắm cũng không có mà ăn, xa cách gia đình nơi xứ người không được an hưởng phúc trên quê hương, âu cũng là trả bớt nghiệp quả của giới siêu giàu đó — hàng ngàn tỷ có được chẳng thể đổi được cái ôm của đứa con bà mong nhớ, chỉ biết lên livestream mà chửi.
+    </blockquote>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section fade-in">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <h2>Kết</h2>
+    </div>
+
+    <p>Ổng vẫn đang hoạt động. Vẫn ở Sài Gòn. Vẫn tuyển người mới — sinh viên mới ra trường, nhân viên bất động sản biết tiếng Anh, những ai trông có vẻ dễ tin và đang cần tiền. Cứ mỗi khi công an đến kiểm tra, trong nhà ổng không có gì — vì hàng được giữ ở chỗ khác. Họ rất kín miệng vì quy tắc ngầm, họ đều có gia đình và gắn với gia tộc. Nếu hỏi các chủ nhà hàng Ấn Độ tại Sài Gòn có biết Sanjay mua bán kim cương không thì họ biết — thậm chí các nhà hàng này còn là mắt xích bán hàng cho ổng, và cũng là mạng lưới liên lạc, giới thiệu người, cung cấp thông tin khi có biến động xảy ra.</p>
+
+    <p>Bài học từ chuyện này, theo tui, có mấy lớp:</p>
+
+    <ul class="conclusion-list">
+      <li><strong>Một là</strong> ngành kim cương lậu ở Việt Nam — đến giấy kiểm định và hàng lẫn lộn thật giả hoặc gian lận mã số — vận hành trên một nền tảng thiếu minh bạch từ gốc. Khách hàng không có đủ công cụ để tự bảo vệ mình.</li>
+      <li><strong>Hai là</strong> thao túng người làm thuê tự do. Chỉ cần một công việc nghe bình thường, một ông chủ dễ chịu, và sự từ từ tăng nhiệt — như con ếch trong nước sôi dần. Cẩn thận mấy ông Ấn Độ — họ gian dối như một kỹ năng sinh tồn từ khi lớn lên, đó là một phần văn hóa sinh tồn. Cần thận trọng khi làm ăn và đặt dấu hỏi về mức độ trung thực.</li>
+      <li><strong>Ba là</strong> khi tiền lớn gặp quyền lực — dù là quyền lực kinh tế kiểu tư bản hay quyền lực chính trị kiểu đỏ — thì luật chơi bên trong rất khác so với thứ người ngoài nhìn thấy. Ai muốn chơi cuộc chơi đó thì phải biết mình đang đặt cược cái gì.</li>
+    </ul>
+
+    <p>Còn không — thì ít nhất nên biết mình đang đứng ở đâu.</p>
+  </div>
+
+  <!-- FOOTNOTES -->
+  <div class="footnotes fade-in">
+    <div class="footnotes-title">Tài liệu tham khảo</div>
+
+    <div class="footnote-item" id="fn1">
+      <span class="footnote-num">[1]</span>
+      <span>Lịch sử mỏ kim cương Golconda Ấn Độ — <a href="https://saigonjewellery.com/diamond-lich-su-kim-cuong-dang-sau-anh-hoa-quang/" target="_blank" rel="noopener">Saigon Jewellery</a></span>
+    </div>
+    <div class="footnote-item" id="fn2">
+      <span class="footnote-num">[2]</span>
+      <span>92% kim cương thô thế giới được mài tại Surat, Ấn Độ — <a href="https://saigonjewellery.com/nghe-thuat-mai-cat-giac-kim-cuong/" target="_blank" rel="noopener">Saigon Jewellery</a></span>
+    </div>
+    <div class="footnote-item" id="fn3">
+      <span class="footnote-num">[3]</span>
+      <span>Trung tâm mài kim cương Surat với 300.000 thợ — <a href="https://nld.com.vn/thoi-su-quoc-te/surat-trung-tam-kim-cuong-moi-cua-the-gioi-63201.htm" target="_blank" rel="noopener">Người Lao Động</a></span>
+    </div>
+    <div class="footnote-item" id="fn4">
+      <span class="footnote-num">[4]</span>
+      <span>Kim cương thô từ châu Phi và Nga qua Surat — <a href="https://thanhnien.vn/surat-noi-kim-cuong-bung-sang-185300849.htm" target="_blank" rel="noopener">Thanh Niên</a></span>
+    </div>
+    <div class="footnote-item" id="fn5">
+      <span class="footnote-num">[5]</span>
+      <span>Vụ bắt 716 viên kim cương qua sân bay Tân Sơn Nhất tháng 10/2024 — <a href="https://tuoitre.vn/mot-nguoi-an-do-van-chuyen-trai-phep-700-vien-kim-cuong-qua-san-bay-tan-son-nhat-20241029161254717.htm" target="_blank" rel="noopener">Tuổi Trẻ</a> / <a href="https://dantri.com.vn/phap-luat/700-vien-kim-cuong-nhap-lau-tu-an-do-qua-san-bay-tan-son-nhat-20241029155448645.htm" target="_blank" rel="noopener">Dân Trí</a></span>
+    </div>
+    <div class="footnote-item" id="fn6">
+      <span class="footnote-num">[6]</span>
+      <span>Vụ bắt 362 viên kim cương giấu trong hộp kẹo từ Hồng Kông — <a href="https://vnexpress.net/du-khach-giau-362-vien-kim-cuong-trong-hop-keo-khi-nhap-canh-4810277.html" target="_blank" rel="noopener">VnExpress</a> / <a href="https://tuoitre.vn/hon-1-000-vien-kim-cuong-bi-thu-giu-tai-san-bay-tan-son-nhat-trong-vong-3-ngay-20241030135338832.htm" target="_blank" rel="noopener">Tuổi Trẻ</a></span>
+    </div>
+    <div class="footnote-item" id="fn7">
+      <span class="footnote-num">[7]</span>
+      <span>Bị cáo Kashinath thực hiện 6–7 chuyến vận chuyển trước khi bị bắt — <a href="https://vnexpress.net/nguoi-dan-ong-an-do-giau-362-vien-kim-cuong-trong-hanh-ly-4935496.html" target="_blank" rel="noopener">VnExpress</a> / <a href="https://dantri.com.vn/phap-luat/thanh-nien-an-do-giau-362-vien-kim-cuong-khi-nhap-canh-qua-tan-son-nhat-20250905124447194.htm" target="_blank" rel="noopener">Dân Trí</a></span>
+    </div>
+    <div class="footnote-item" id="fn8">
+      <span class="footnote-num">[8]</span>
+      <span>Thủ thuật gian lận mã số kim cương, tổng hợp từ cộng đồng người trong nghề — <a href="https://voz.vn/t/ba-chu-tiem-vang-kim-ly-len-tieng-truoc-on-ao-tren-mang-xa-hoi.1245537/" target="_blank" rel="noopener">VOZ thread</a></span>
+    </div>
+    <div class="footnote-item" id="fn9">
+      <span class="footnote-num">[9]</span>
+      <span>Người vận chuyển kim cương lậu được trả công khoảng 10.000 Rupee/chuyến (~3 triệu đồng) — <a href="https://vnexpress.net/nguoi-dan-ong-an-do-giau-362-vien-kim-cuong-trong-hanh-ly-4935496.html" target="_blank" rel="noopener">VnExpress</a></span>
+    </div>
+  </div>
+
+  <div class="disclaimer fade-in">
+    Bài viết dựa trên trải nghiệm cá nhân của tác giả, kết hợp các vụ việc được truyền thông chính thống đưa tin. Tên nhân vật trong đường dây đã được thay đổi hoặc viết tắt. Đây là ý kiến cá nhân, không đại diện cho bất kỳ tổ chức nào.
+  </div>
+
+</div><!-- .content -->
+</main>
+
+<footer>
+  <span>Cluster G</span> · Báo cáo độc lập · 2026 · Mọi quyền được bảo lưu
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
