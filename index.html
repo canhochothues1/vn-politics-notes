@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vn-politics-notes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f9f9f7; color: #1a1a1a; padding: 2rem 1rem; }
+    .container { max-width: 680px; margin: 0 auto; }
+    .site-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e0e0d8; }
+    .site-title { font-size: 22px; font-weight: 600; }
+    .site-desc { font-size: 14px; color: #666; margin-top: 6px; line-height: 1.6; }
+    .article-list { display: flex; flex-direction: column; gap: 1rem; }
+    .card { background: #fff; border: 1px solid #e8e8e2; border-radius: 12px; padding: 1.25rem; }
+    .card:hover { border-color: #bbb; }
+    .meta { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .tag { font-size: 11px; padding: 2px 10px; border-radius: 6px; background: #e8f0fe; color: #1a56b0; font-weight: 500; }
+    .date { font-size: 12px; color: #999; }
+    .card-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; margin-bottom: 6px; }
+    .card-title:hover { color: #1a56b0; }
+    .card-desc { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 10px; }
+    .read-link { font-size: 13px; color: #1a56b0; text-decoration: none; }
+    .read-link:hover { text-decoration: underline; }
+    .footer { margin-top: 2.5rem; font-size: 12px; color: #aaa; text-align: center; }
+    .error { color: #c00; font-size: 14px; padding: 1rem 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="site-header">
+      <div class="site-title">vn-politics-notes</div>
+      <div class="site-desc">Ghi chú phân tích chính trị Việt Nam — tổng hợp tài liệu, hồ sơ, và bình luận độc lập.</div>
+    </div>
+
+    <div class="article-list" id="list">
+      <div style="color: #999; font-size: 14px;">Đang tải danh sách bài...</div>
+    </div>
+
+    <div class="footer">Vietnamuncensored · vn-politics-notes</div>
+  </div>
+
+  <script>
+    async function loadArticles() {
+      const list = document.getElementById('list');
+      try {
+        const res = await fetch('manifest.json');
+        if (!res.ok) throw new Error('Không tải được manifest.json');
+        const articles = await res.json();
+
+        if (articles.length === 0) {
+          list.innerHTML = '<div style="color:#999;font-size:14px;">Chưa có bài nào.</div>';
+          return;
+        }
+
+        list.innerHTML = articles.map(a => `
+          <div class="card">
+            <div class="meta">
+              <span class="tag">${a.tag || 'Ghi chú'}</span>
+              <span class="date">${a.date || ''}</span>
+            </div>
+            <a class="card-title" href="${a.file}">${a.title}</a>
+            <div class="card-desc">${a.desc}</div>
+            <a class="read-link" href="${a.file}">Đọc bài →</a>
+          </div>
+        `).join('');
+      } catch (e) {
+        list.innerHTML = `<div class="error">Lỗi: ${e.message}</div>`;
+      }
+    }
+
+    loadArticles();
+  </script>
+</body>
+</html>
