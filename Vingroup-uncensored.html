@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sự thật về VinGroup – Bị kiểm duyệt tại Việt Nam</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --border: #2a2a2a;
+    --accent: #e8c84b;
+    --accent-dim: rgba(232, 200, 75, 0.12);
+    --text: #e8e3d8;
+    --muted: #7a7469;
+    --tag-bg: #1e1e1e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .channels {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .channel-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent-dim);
+    border: 1px solid rgba(232, 200, 75, 0.25);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+  }
+  .channel-link:hover { background: rgba(232, 200, 75, 0.22); }
+
+  /* ── Main layout ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 5rem;
+  }
+
+  /* ── Section heading ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Article card ── */
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .article-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+  }
+
+  .article-card:hover { background: var(--accent-dim); padding-left: 0.6rem; margin-left: -0.6rem; }
+
+  .card-vi {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  .card-en {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
+  .arrow {
+    color: var(--accent);
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.7;
+  }
+
+  /* ── Tag ── */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.15rem 0.55rem;
+    border-radius: 2px;
+    margin-bottom: 0.3rem;
+  }
+
+  .tag.danger { border-color: #6b2020; color: #e87070; background: rgba(107,32,32,0.15); }
+  .tag.finance { border-color: #1e4060; color: #70b8e8; background: rgba(30,64,96,0.15); }
+  .tag.safety  { border-color: #4a2d00; color: #e8a550; background: rgba(74,45,0,0.15); }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 520px) {
+    header, main, footer { padding-left: 1.1rem; padding-right: 1.1rem; }
+    .article-card { grid-template-columns: 1fr; }
+    .arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Tài liệu bị kiểm duyệt &nbsp;·&nbsp; Uncensored Vietnam</p>
+  <h1>Sự thật về <em>VinGroup</em><br>bị kiểm duyệt tại Việt Nam</h1>
+  <p class="subtitle">Tổng hợp các bài viết điều tra về Vinfast và Vingroup mà báo chí trong nước không được đăng. Nội dung hoàn toàn bằng tiếng Việt và tiếng Anh.</p>
+  <div class="channels">
+    <a class="channel-link" href="https://t.me/vietnamuncensored" target="_blank" rel="noopener">📣 Telegram</a>
+    <a class="channel-link" href="http://bit.ly/4li8peQ" target="_blank" rel="noopener">🔗 Mirror link</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- PHẠM NHẬT VƯỢNG -->
+  <p class="section-label">Chân dung &amp; thủ thuật tài chính — Phạm Nhật Vượng</p>
+  <div class="article-list">
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/debunk_vuong" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Phân tích</span>
+        <div class="card-en">Debunk Vuong Pham's patriotism playing card</div>
+        <div class="card-vi">Bóc mẽ lá bài yêu nước của Phạm Nhật Vượng</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/portrait_vuong" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Phân tích</span>
+        <div class="card-en">The portrait of Vuong Pham: must read</div>
+        <div class="card-vi">Chân dung Phạm Nhật Vượng: phải đọc</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/shell_company_pump" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Công ty vỏ bọc</span>
+        <div class="card-en">How Vuong Pham used a shell company to pump money into Vinfast</div>
+        <div class="card-vi">Vuong Phạm đã sử dụng công ty vỏ bọc để bơm tiền vào Vinfast như thế nào</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/part1_ownership" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Cơ cấu sở hữu</span>
+        <div class="card-en">Part 1: How Vuong Pham moves companies ownership around like wood blocks</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/part2_web" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Cơ cấu sở hữu</span>
+        <div class="card-en">Part 2: The incredible entangled web of Vingroup</div>
+        <div class="card-vi">Phần 2: Mạng lưới chồng chéo của VinGroup</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/pump_dump_vic" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Pump &amp; Dump</span>
+        <div class="card-en">How Vuong Pham used multiple shell companies for pumping and dumping of VIC</div>
+        <div class="card-vi">Ông Vượng đã sử dụng nhiều công ty vỏ bọc để bơm và xả VIC như thế nào</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/two_tricks" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Phân tích</span>
+        <div class="card-en">Vuong Pham's two most common and powerful financial tricks</div>
+        <div class="card-vi">Hai chiêu trò tài chính phổ biến và hiệu quả nhất của Vương Phạm</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/convert_debt" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">2025</span>
+        <div class="card-en">Vuong Pham converts Vinfast debt to VFS — as predicted 5 months ago</div>
+        <div class="card-vi">Điều tôi dự đoán 5 tháng trước đã thành sự thật: Vượng chuyển nợ Vinfast sang VFS</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/billions_scams" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Lừa đảo</span>
+        <div class="card-en">There are many billions dollar scams by Vuong Pham, not just Grandworld Phu Quoc</div>
+        <div class="card-vi">Có rất nhiều vụ lừa đảo tỷ đô của Vương Phạm, không chỉ Grandworld Phú Quốc</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/realestate_crime" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Bất động sản</span>
+        <div class="card-en">The crime of Hung Anh Ho and Vuong Pham in real estate</div>
+        <div class="card-vi">Tội ác của Hồ Hùng Anh và Phạm Nhật Vượng trong lĩnh vực bất động sản</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- VINFAST: TÀI CHÍNH & NỢ -->
+  <p class="section-label">Tài chính &amp; Nợ — Vinfast</p>
+  <div class="article-list">
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/5pct_truth" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Nhận thức</span>
+        <div class="card-en">Only 5% of Vietnamese people know the truth about Vinfast</div>
+        <div class="card-vi">Chỉ 5% người Việt Nam biết sự thật về Vinfast</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/analysis_2023" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Tổng hợp 2023</span>
+        <div class="card-en">Looking back: collection of Vinfast analysis 2023</div>
+        <div class="card-vi">Nhìn lại và tổng hợp phân tích Vinfast 2023</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/revenue_analysis" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Doanh thu</span>
+        <div class="card-en">Vinfast sales revenue analysis: many surprising things</div>
+        <div class="card-vi">Phân tích doanh thu bán hàng của Vinfast: nhiều điều thú vị sẽ khiến bạn bất ngờ</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/bankrupt_2024" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Phá sản</span>
+        <div class="card-en">Vinfast is going bankrupt — 2024</div>
+        <div class="card-vi">Vinfast chuẩn bị phá sản 2024?</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/technically_bankrupt" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Phá sản</span>
+        <div class="card-en">Vinfast is technically bankrupt</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/debt_bomb" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Nợ</span>
+        <div class="card-en">Vingroup's debt is a huge timed bomb</div>
+        <div class="card-vi">Nợ của Vingroup là một quả bom hẹn giờ khổng lồ</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/cannot_raise_money" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Vốn</span>
+        <div class="card-en">Vinfast cannot raise more money — Vingroup desperate to raise funds by any means (2024)</div>
+        <div class="card-vi">Vinfast không thể huy động thêm vốn và Vingroup đang tuyệt vọng huy động vốn bằng mọi cách</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/shadow_economy" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Lý thuyết</span>
+        <div class="card-en">Vingroup and Vietnam's Shadow Economy Doctrine: A Financial Engine that Extracts Wealth Across Generations</div>
+        <div class="card-vi">Học thuyết kinh tế bóng tối Vingroup: công cụ trích xuất sự giàu có qua các thế hệ</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/pump_dump_aug10" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Pump &amp; Dump</span>
+        <div class="card-en">Anatomy of a pump and dump game: From Lawrence Ho's setup to stock manipulation on Aug 10, 2023</div>
+        <div class="card-vi">Giải phẫu trò chơi bơm và xả: từ cách Lawrence Ho thiết lập đến thao túng cổ phiếu ngày 10/8/2023</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- AN TOÀN XE -->
+  <p class="section-label">An toàn &amp; Chất lượng xe</p>
+  <div class="article-list">
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/us_family_vf8" target="_blank" rel="noopener">
+      <div>
+        <span class="tag safety">Tai nạn</span>
+        <div class="card-en">A US family of four with two children killed in a self-crashed VF8 in California</div>
+        <div class="card-vi">Gia đình 4 người bị tai nạn trên xe VF8 tại California</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/vf9_killed" target="_blank" rel="noopener">
+      <div>
+        <span class="tag safety">Tai nạn</span>
+        <div class="card-en">Is it real that a malfunctioning VF9 killed a man in Vietnam?</div>
+        <div class="card-vi">Có phải sự thật là một chiếc VF9 bị trục trặc vừa giết chết một người đàn ông ở Việt Nam?</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/tata_engineer" target="_blank" rel="noopener">
+      <div>
+        <span class="tag safety">Thiết kế lỗi</span>
+        <div class="card-en">Tata engineer revealed that Vinfast cars have design problems — must read</div>
+        <div class="card-vi">Kỹ sư Tata tiết lộ xe Vinfast có vấn đề về thiết kế</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/vf3_range" target="_blank" rel="noopener">
+      <div>
+        <span class="tag safety">Phạm vi pin</span>
+        <div class="card-en">Vuong Pham's trick: VF3's real-world range is not 210km — it is far less, around 120km</div>
+        <div class="card-vi">Mẹo của Vượng: phạm vi thực tế của VF3 không phải 210km mà chỉ khoảng 120km</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/vinpearl_collapse" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Cơ sở hạ tầng</span>
+        <div class="card-en">A Vinpearl project in Nha Trang collapsed — Vin ordered media to delete the news</div>
+        <div class="card-vi">Một góc tòa nhà Vinpearl bị đổ sụp mà báo chí VN không dám đăng</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- BÁO ĐẤT VIỆT -->
+  <p class="section-label">Báo Đất Việt — Loạt bài điều tra</p>
+  <div class="article-list">
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/ven-man-cong-ty-vo-boc-va-cach-vinfast-giau-no/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Vén màn công ty vỏ bọc và cách Vinfast giấu nợ</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/binh-luan-ve-vinfast-sonnie-tran-phai-vuot-bien-xin-ty-nan/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Bình luận về Vinfast, Sonnie Tran phải vượt biên, xin tỵ nạn</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/bao-quoc-te-dua-tin-vu-vinfast-bao-cong-an-trieu-tap-sonnie-tran/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Báo quốc tế đưa tin vụ VinFast báo công an triệu tập Sonnie Tran</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/them-chi-tiet-vu-facebooker-sonnie-tran-bi-cau-luu/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Thêm chi tiết vụ Facebooker Sonnie Tran bị câu lưu</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/lat-tay-vinfast-facebooker-sonnie-tran-bi-bo-cong-an-trieu-tap/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Lật tẩy Vinfast, Facebooker Sonnie Tran bị Bộ Công an triệu tập</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/khi-vinfast-muon-tay-cong-an-tran-ap-facebooker/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Khi Vinfast mượn tay công an trấn áp Facebooker</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/vinfast-dong-tho-nha-may-o-my-nhung-khong-co-tien-de-xay/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Vinfast động thổ nhà máy ở Mỹ nhưng không có tiền để xây</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/su-that-vu-quy-dau-tu-my-thoa-thuan-mua-1-ty-do-co-phieu-vinfast/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Sự thật vụ quỹ đầu tư Mỹ thỏa thuận mua 1 tỷ đô cổ phiếu Vinfast</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/cong-luan-binh-luan-gi-vu-von-hoa-vinfast-vuot-85-ty-do/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Công luận bình luận gì vụ vốn hóa Vinfast "vượt 85 tỷ đô"?</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/thu-ngo-gui-2-tien-si-lua-ga-cho-vinfast/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Thư ngỏ gửi 2 "tiến sĩ lùa gà" cho Vinfast</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/su-that-ve-chuyen-vinfast-nhan-12-ty-do-tu-bang-north-carolina/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Sự thật về chuyện Vinfast "nhận 1,2 tỷ đô từ bang North Carolina"</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/vinfast-co-sap-nhap-cung-chi-thu-ve-30-trieu-usd-du-xai-mot-thang/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Vinfast có sáp nhập cũng chỉ thu về 30 triệu USD, đủ xài một tháng</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/vi-sao-vinfast-lam-xe-nhanh-va-nhieu-loi/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Vì sao Vinfast làm xe nhanh và… nhiều lỗi?</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/tin-xau-cho-vinfast-can-tien-lo-cong-ty-con-ne-thue-o-cayman-island/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Tin xấu cho Vinfast: Cạn tiền, lộ công ty con né thuế ở Cayman Island</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/xe-vinfast-lot-top-dau-the-gioi-ve-ty-le-loi/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Xe Vinfast lọt top đầu thế giới về… tỷ lệ lỗi</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://baodatviet.vn/kinh-te/doanh-nghiep/thay-gi-tu-vu-pham-nhat-vuong-bom-1-ty-do-cho-vinfast/" target="_blank" rel="noopener">
+      <div>
+        <div class="card-en">Thấy gì từ vụ Phạm Nhật Vượng "bơm" 1 tỷ đô cho Vinfast?</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- ALBERT -->
+  <p class="section-label">Tác giả &amp; Phản hồi</p>
+  <div class="article-list">
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/who_is_albert" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">Tác giả</span>
+        <div class="card-en">Who is Albert? — The author of this investigative series on Vingroup</div>
+        <div class="card-vi">Ai là Albert? Người viết loạt bài điều tra về Vingroup?</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/albert_2023" target="_blank" rel="noopener">
+      <div>
+        <span class="tag finance">2023</span>
+        <div class="card-en">Albert here, few words on Vinfast (2023)</div>
+        <div class="card-vi">Albert ở đây, vài lời về Vinfast (chuyển sang sub mới sau khi sub cũ bị spam)</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a class="article-card" href="https://www.reddit.com/r/VinFastCommunity/comments/vuong_scared" target="_blank" rel="noopener">
+      <div>
+        <span class="tag danger">Phản ứng</span>
+        <div class="card-en">Vuong N Pham: many people attacking Vinfast in the last two weeks — he must be very scared</div>
+        <div class="card-vi">Vương Phạm: hai tuần qua rất nhiều người chỉ trích Vinfast — chắc hẳn ông ấy rất sợ hãi</div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  Nội dung được tổng hợp từ các nguồn công khai. Không chịu trách nhiệm về tính chính xác của từng bài gốc. &nbsp;·&nbsp; <a href="https://t.me/vietnamuncensored" style="color:var(--accent);text-decoration:none;">@vietnamuncensored</a>
+</footer>
+
+</body>
+</html>
