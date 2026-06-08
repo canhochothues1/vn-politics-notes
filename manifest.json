@@ -11,13 +11,20 @@
     "title": "Buôn lậu Kim Cương Ở VN và chuyện cửa hàng Kim Lý",
     "desc": "Nhằm đưa ra overview của người trong ngành về kim cương buôn lậu tại VN như thế nào",
     "tag": "Phân tích",
-    "date": "10 tháng 6, 2025"
+    "date": "5 tháng 6, 2025"
   },
   {
     "file": "Vingroup-Debt.html",
     "title": "Vingroup Debt — A Ticking Time Bomb",
     "desc": "Vingroup và cách thức đảo nợ để làm đẹp giấy tờ che giấu những sự thật phía sau",
     "tag": "Phân tích", 
+    "date": "10 tháng 6, 2025"
+  },
+  {
+    "file": "Vingroup-uncensored.html",
+    "title": "Sự thật về VinGroup bị kiểm duyệt tại Việt Nam",
+    "desc": "Vingroup tổng hợp các bài viết trên reddit song ngữ Anh Việt dính kèm link nguồn",
+    "tag": "Collection", 
     "date": "10 tháng 6, 2025"
   }
 ]
