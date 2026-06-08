@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nợ Vingroup — Quả Bom Hẹn Giờ Khổng Lồ | Vingroup Debt — A Ticking Time Bomb</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f4f2ee;
+    --bg2: #eceae4;
+    --bg3: #e4e1d8;
+    --border: #d0ccc2;
+    --accent: #7a5500;
+    --accent2: #5c3e00;
+    --text: #1e1a14;
+    --text-muted: #6a6050;
+    --text-bright: #0f0c08;
+    --red: #8b1a1a;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .site-tag span { color: var(--accent); }
+
+  .header-date {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .category-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text-bright);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-style: italic;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+  }
+
+  .meta-bar {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .meta-item span {
+    color: var(--text);
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+  }
+
+  /* LANG TOGGLE */
+  .lang-toggle {
+    margin-left: auto;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .lang-btn {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    background: none;
+    color: var(--text-muted);
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active, .lang-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(122,85,0,0.05);
+  }
+
+  /* BILINGUAL LAYOUT */
+  .bilingual-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-number {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    min-width: 2rem;
+  }
+
+  /* BILINGUAL COLUMNS */
+  .bilingual-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .col-en { border-right: 1px solid var(--border); padding-right: 3rem; }
+  .col-vi { padding-left: 0; }
+
+  .col-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    opacity: 0.7;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin: 2rem 0 0.75rem;
+    font-style: italic;
+  }
+
+  p {
+    margin-bottom: 1.3rem;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: var(--text-bright); font-weight: 600; }
+  em { color: var(--accent2); font-style: italic; }
+
+  /* DATA TABLE */
+  .data-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    line-height: 2;
+  }
+
+  .data-block .data-title {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding: 0.3rem 0;
+    color: var(--text-muted);
+  }
+
+  .data-row:last-child { border-bottom: none; }
+
+  .data-row .val {
+    color: var(--text-bright);
+    font-weight: 500;
+  }
+
+  .data-row.highlight { color: var(--red); }
+  .data-row.highlight .val { color: var(--red); font-weight: 600; }
+
+  /* BLOCKQUOTE */
+  blockquote {
+    background: var(--bg2);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text);
+    position: relative;
+    font-size: 0.92rem;
+  }
+
+  blockquote::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--accent);
+    opacity: 0.15;
+    position: absolute;
+    top: -0.5rem;
+    left: 0.75rem;
+    line-height: 1;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .callout.warning { border-color: var(--red); border-left-width: 3px; }
+  .callout.info { border-color: var(--accent); border-left-width: 3px; }
+
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .callout.warning .callout-label { color: var(--red); }
+
+  /* FIGURE */
+  figure {
+    margin: 1.5rem 0;
+  }
+
+  figure img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+  }
+
+  figcaption {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+
+  /* DIAMOND SEP */
+  .diamond-sep {
+    text-align: center;
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    padding: 1rem 0;
+    opacity: 0.35;
+  }
+
+  /* FOOTNOTES */
+  .footnotes {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  .footnotes-title {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .footnote-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    align-items: baseline;
+  }
+
+  .footnote-num {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 0.65rem;
+    min-width: 1.5rem;
+  }
+
+  .footnote-item a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .footnote-item a:hover { text-decoration: underline; }
+
+  /* INLINE FOOTNOTE */
+  sup {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--accent);
+    cursor: default;
+  }
+
+  sup a { color: var(--accent); text-decoration: none; }
+  sup a:hover { text-decoration: underline; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.75rem;
+    margin: 3rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  footer span { color: var(--accent); }
+
+  /* FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* SINGLE LANG MODE */
+  body.show-en .col-vi { display: none; }
+  body.show-en .col-en { border-right: none; padding-right: 0; grid-column: 1 / -1; }
+  body.show-vi .col-en { display: none; }
+  body.show-vi .col-vi { grid-column: 1 / -1; }
+
+  /* SECTION FULL-WIDTH ELEMENTS (images span both cols) */
+  .full-width { grid-column: 1 / -1; }
+
+  /* RESPONSIVE */
+  @media (max-width: 820px) {
+    .bilingual-cols { grid-template-columns: 1fr; gap: 2rem; }
+    .col-en { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 2rem; margin-bottom: 0.5rem; }
+    body.show-en .col-en, body.show-vi .col-vi { grid-column: auto; }
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 15px; }
+    .hero { padding: 3rem 1.25rem 2rem; }
+    .bilingual-wrapper { padding: 0 1.25rem; }
+    h1 { font-size: 1.6rem; }
+    .meta-bar { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+    .lang-toggle { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-tag"><span>cingulomania</span> — Báo cáo điều tra</div>
+    <div class="header-date">Tháng 6, 2026</div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero fade-in">
+    <div class="category-tag">Phân tích tài chính · Financial Analysis</div>
+    <h1>Nợ Vingroup —<br><em>Quả Bom Hẹn Giờ Khổng Lồ</em><br>
+      <span style="font-size:0.7em;opacity:0.8;">Vingroup Debt — A Ticking Time Bomb</span>
+    </h1>
+    <p class="subtitle">Trong một năm, tổng nợ phải trả của Vingroup tăng 50%, từ 21 tỷ USD lên 30,8 tỷ USD — một con số chưa từng thấy ở bất kỳ tập đoàn tư nhân nào tại Việt Nam, được che đậy bằng mạng lưới công ty vỏ bọc, hố đen tài chính và thủ thuật bơm xả cổ phiếu. / In a single year, Vingroup's total liabilities grew 50%, from $21B to $30.8B — unprecedented for any Vietnamese private conglomerate, concealed behind shell companies, financial black holes, and stock manipulation.</p>
+    <div class="meta-bar">
+      <div class="meta-item">Nguồn · Source<span>Reddit / r/VinFastCommunity</span></div>
+      <div class="meta-item">Ngày đăng · Date<span>Tháng 6, 2026</span></div>
+      <div class="meta-item">Danh mục · Tag<span>Hồ sơ điều tra</span></div>
+      <div class="lang-toggle">
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('both')">EN/VI</button>
+        <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="bilingual-wrapper">
+
+    <!-- SECTION 1: DEBT NUMBERS -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Những con số biết nói · The Numbers That Speak</h2>
+      </div>
+
+      <div class="bilingual-cols">
+        <div class="col-en">
+          <div class="col-label">English</div>
+          <p>The raw balance sheet data from Q2 2025 against Q2 2024 tells a stark story.<sup><a href="#fn1">1</a></sup> In a single year, Vingroup's total liabilities surged from <strong>559,898 billion VND ($21.4B)</strong> to <strong>805,821 billion VND ($30.8B)</strong> — an increase of nearly $10 billion in absolute terms, or <strong>50% growth year-on-year</strong>.</p>
+          <p>This is not a rounding error. This is not a cyclical dip in cash flow. This is structural accumulation of debt at a pace that defies any sound financial logic for a private company.</p>
+
+          <div class="data-block">
+            <span class="data-title">Q2 2024 — Total Liabilities</span>
+            <div class="data-row"><span>Total</span><span class="val">559,898B VND · $21.4B</span></div>
+            <div class="data-row"><span>Short-term</span><span class="val">418,113B VND</span></div>
+            <div class="data-row"><span>Long-term</span><span class="val">141,785B VND</span></div>
+          </div>
+
+          <div class="data-block">
+            <span class="data-title">Q2 2025 — Total Liabilities</span>
+            <div class="data-row highlight"><span>Total</span><span class="val">805,821B VND · $30.8B</span></div>
+            <div class="data-row"><span>Short-term</span><span class="val">506,624B VND</span></div>
+            <div class="data-row"><span>Long-term</span><span class="val">299,197B VND</span></div>
+            <div class="data-row highlight"><span>YoY Change</span><span class="val">+$9.4B · +50%</span></div>
+          </div>
+
+          <p>At this exponential trajectory — if the pattern holds — total liabilities could reach <strong>$50B by 2026</strong>, then $80B, then $100B.<sup><a href="#fn1">1</a></sup> The principal is never repaid. Only interest is serviced. The debt clock ticks.</p>
+        </div>
+
+        <div class="col-vi">
+          <div class="col-label">Tiếng Việt</div>
+          <p>Dữ liệu bảng cân đối kế toán từ Q2/2025 so với Q2/2024 phơi bày một sự thật trần trụi.<sup><a href="#fn1">1</a></sup> Chỉ trong một năm, tổng nợ phải trả của Vingroup tăng vọt từ <strong>559.898 tỷ đồng (21,4 tỷ USD)</strong> lên <strong>805.821 tỷ đồng (30,8 tỷ USD)</strong> — tăng gần 10 tỷ USD theo giá trị tuyệt đối, tương đương <strong>tăng 50% theo năm</strong>.</p>
+          <p>Đây không phải sai số làm tròn. Đây không phải biến động chu kỳ dòng tiền. Đây là sự tích lũy nợ có hệ thống ở tốc độ phi lý với bất kỳ nguyên tắc tài chính lành mạnh nào của một công ty tư nhân.</p>
+
+          <div class="data-block">
+            <span class="data-title">Q2 2024 — Tổng nợ phải trả</span>
+            <div class="data-row"><span>Tổng cộng</span><span class="val">559.898 tỷ · 21,4 tỷ USD</span></div>
+            <div class="data-row"><span>Ngắn hạn</span><span class="val">418.113 tỷ đồng</span></div>
+            <div class="data-row"><span>Dài hạn</span><span class="val">141.785 tỷ đồng</span></div>
+          </div>
+
+          <div class="data-block">
+            <span class="data-title">Q2 2025 — Tổng nợ phải trả</span>
+            <div class="data-row highlight"><span>Tổng cộng</span><span class="val">805.821 tỷ · 30,8 tỷ USD</span></div>
+            <div class="data-row"><span>Ngắn hạn</span><span class="val">506.624 tỷ đồng</span></div>
+            <div class="data-row"><span>Dài hạn</span><span class="val">299.197 tỷ đồng</span></div>
+            <div class="data-row highlight"><span>Tăng so với năm trước</span><span class="val">+9,4 tỷ USD · +50%</span></div>
+          </div>
+
+          <p>Theo đà tăng lũy thừa này — nếu xu hướng tiếp diễn — tổng nợ có thể đạt <strong>50 tỷ USD vào năm 2026</strong>, rồi 80 tỷ, rồi 100 tỷ.<sup><a href="#fn1">1</a></sup> Tiền gốc không bao giờ được hoàn trả. Chỉ có lãi được thanh toán. Đồng hồ nợ vẫn tích tắc.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: TOO BIG TO FAIL -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Khi con nợ trở thành chủ nợ · When the Debtor Becomes the Creditor</h2>
+      </div>
+
+      <div class="bilingual-cols">
+        <div class="col-en">
+          <div class="col-label">English</div>
+          <p>There is a well-known principle in high finance, rarely articulated in plain language: when you owe a bank a few billion dong, the bank owns you. When you owe the bank <strong>$20 billion</strong>, you own the bank.<sup><a href="#fn1">1</a></sup></p>
+
+          <blockquote>
+            "If you owe the bank $20 billion, then the bank becomes your hostage. They will just flip the debt and kick the debt down the road, only paying the interest. The principal will never be paid."
+          </blockquote>
+
+          <p>The Vietnamese Communist government, fully aware of Vingroup's systemic importance, has become structurally incapable of allowing a Vin collapse. A Vingroup failure would cascade into <strong>Techcombank</strong> — the financial institution most deeply entangled with Vin's debt architecture — and trigger a domino effect across the banking sector.<sup><a href="#fn1">1</a></sup></p>
+
+          <div class="callout warning">
+            <span class="callout-label">⚠ Systemic Risk</span>
+            <p>They have created a monster that they now have to keep feeding. The state and the bank are both hostages.</p>
+          </div>
+
+          <p>This is not unprecedented globally. But Vingroup is not a sovereign state. It is a private company. And private companies, unlike nations, cannot print money. They are bound by the laws of business — laws that have a final reckoning.</p>
+        </div>
+
+        <div class="col-vi">
+          <div class="col-label">Tiếng Việt</div>
+          <p>Có một nguyên tắc nổi tiếng trong tài chính bậc cao, hiếm khi được nói thẳng: khi bạn nợ ngân hàng vài tỷ đồng, ngân hàng là chủ bạn. Khi bạn nợ ngân hàng <strong>20 tỷ USD</strong>, bạn mới là chủ ngân hàng.<sup><a href="#fn1">1</a></sup></p>
+
+          <blockquote>
+            "Nếu bạn nợ ngân hàng 20 tỷ đô la, thì ngân hàng sẽ trở thành con tin của bạn. Họ sẽ chỉ lật ngược khoản nợ và đẩy khoản nợ xuống đường, chỉ trả lãi. Tiền gốc sẽ không bao giờ được trả."
+          </blockquote>
+
+          <p>Chính quyền Việt Nam, hiểu rõ tầm quan trọng hệ thống của Vingroup, đã rơi vào trạng thái không thể để Vin sụp đổ. Sự sụp đổ của Vingroup sẽ lan sang <strong>Techcombank</strong> — tổ chức tài chính gắn chặt nhất với kiến trúc nợ của Vin — và kích hoạt hiệu ứng domino toàn ngành ngân hàng.<sup><a href="#fn1">1</a></sup></p>
+
+          <div class="callout warning">
+            <span class="callout-label">⚠ Rủi ro hệ thống</span>
+            <p>Họ đã tạo ra một con quái vật mà nay phải tiếp tục nuôi dưỡng. Cả nhà nước lẫn ngân hàng đều là con tin.</p>
+          </div>
+
+          <p>Điều này không phải chưa từng có tiền lệ trên thế giới. Nhưng Vingroup không phải quốc gia có chủ quyền. Đây là một công ty tư nhân. Và công ty tư nhân, khác với quốc gia, không thể in tiền. Họ bị ràng buộc bởi luật kinh doanh — những luật có ngày phán xét cuối cùng.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: SHELL COMPANIES -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Bơm và Xả — Mạng Lưới Công Ty Vỏ Bọc · Pump and Dump — The Shell Company Network</h2>
+      </div>
+
+      <div class="bilingual-cols">
+        <div class="col-en">
+          <div class="col-label">English</div>
+          <p>Beneath the official Vingroup structure lies a parallel universe of shell companies — private, largely invisible, registered at addresses like 191 Bà Triệu, Hà Nội (Vincom Center Bà Triệu, formerly also Techcombank's headquarters).<sup><a href="#fn2">2</a></sup></p>
+
+          <p>These shell companies share several distinguishing characteristics:</p>
+          <ul style="list-style:none;margin:1rem 0 1.3rem;">
+            <li style="padding:0.4rem 0 0.4rem 1.5rem;position:relative;border-bottom:1px solid var(--border);font-size:0.92rem;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Each holds <strong>under 5% of VIC's outstanding shares</strong>, exempting them from SEC filing requirements before buying or selling.</li>
+            <li style="padding:0.4rem 0 0.4rem 1.5rem;position:relative;border-bottom:1px solid var(--border);font-size:0.92rem;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Many have <strong>no public tax code records</strong> — potentially ghost companies entirely.</li>
+            <li style="padding:0.4rem 0 0.4rem 1.5rem;position:relative;font-size:0.92rem;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> They raised <strong>thousands of billions of VND</strong> from Techcombank/TCBS, using inflated real estate land rights or business contracts as collateral.</li>
+          </ul>
+
+          <p>The combined shell company holdings in the public shareholder list: approximately <strong>700 million VIC shares — worth ~$1.3B</strong> at the time of analysis. Vuong Pham dumped <strong>$280M in Q3 alone</strong>.<sup><a href="#fn2">2</a></sup></p>
+
+          <p>The mechanism is straightforward: buy up the price through shell companies to lure retail investors, then dump on the open market. Because no single entity crosses 5%, the SEC is never notified. The retail investor holds the bag.</p>
+        </div>
+
+        <div class="col-vi">
+          <div class="col-label">Tiếng Việt</div>
+          <p>Bên dưới cơ cấu chính thức của Vingroup tồn tại một vũ trụ song song gồm các công ty vỏ bọc — tư nhân, gần như vô hình, đăng ký tại các địa chỉ như 191 Bà Triệu, Hà Nội (Vincom Center Bà Triệu, trước đây cũng là trụ sở Techcombank).<sup><a href="#fn2">2</a></sup></p>
+
+          <p>Các công ty vỏ bọc này có những đặc điểm chung:</p>
+          <ul style="list-style:none;margin:1rem 0 1.3rem;">
+            <li style="padding:0.4rem 0 0.4rem 1.5rem;position:relative;border-bottom:1px solid var(--border);font-size:0.92rem;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Mỗi công ty nắm giữ <strong>dưới 5% tổng số cổ phiếu VIC đang lưu hành</strong>, thoát khỏi yêu cầu nộp thông báo cho UBCKNN trước khi mua hoặc bán.</li>
+            <li style="padding:0.4rem 0 0.4rem 1.5rem;position:relative;border-bottom:1px solid var(--border);font-size:0.92rem;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Nhiều công ty <strong>không có mã số thuế công khai</strong> — có thể là công ty ma hoàn toàn.</li>
+            <li style="padding:0.4rem 0 0.4rem 1.5rem;position:relative;font-size:0.92rem;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Chúng đã huy động <strong>hàng ngàn tỷ đồng</strong> từ Techcombank/TCBS, dùng quyền sử dụng đất bất động sản thổi phồng hoặc hợp đồng kinh doanh làm tài sản thế chấp.</li>
+          </ul>
+
+          <p>Tổng số cổ phiếu mà các công ty vỏ bọc trong danh sách cổ đông công khai nắm giữ: khoảng <strong>700 triệu cổ phiếu VIC — trị giá ~1,3 tỷ USD</strong> tại thời điểm phân tích. Vương Phạm đã bán tháo <strong>280 triệu USD chỉ trong Q3</strong>.<sup><a href="#fn2">2</a></sup></p>
+
+          <p>Cơ chế rất đơn giản: đẩy giá lên qua công ty vỏ bọc để thu hút nhà đầu tư nhỏ lẻ, sau đó bán tháo trên thị trường mở. Vì không đơn vị nào vượt ngưỡng 5%, UBCKNN không bao giờ được thông báo. Nhà đầu tư nhỏ lẻ là người ôm túi rỗng.</p>
+        </div>
+      </div>
+
+      <!-- Image spanning both columns -->
+      <div class="bilingual-cols" style="margin-top:2rem;">
+        <div class="full-width">
+          <figure style="margin:0;">
+            <img src="https://preview.redd.it/part-2-the-incredible-entangled-web-of-vingroup-v0-nuskv7xu4ltb1.png?width=1080&crop=smart&auto=webp&s=9fb71e3221a62bc76bcd2cf04bdff8ca78bceaa7"
+                 alt="Mạng lưới chằng chịt của Vingroup — The entangled web of Vingroup"
+                 style="width:100%;display:block;border:1px solid var(--border);">
+            <figcaption style="font-family:var(--mono);font-size:0.65rem;color:var(--text-muted);margin-top:0.5rem;letter-spacing:0.08em;">
+              Bản đồ mạng lưới sở hữu chéo của Vingroup tính đến 31/5/2023. Viền xanh lá = cấp 1; Viền đỏ = cấp 2; Viền xanh dương = cấp 3; Viền vàng = cấp 4. / Vingroup cross-ownership network as of 5/31/2023. Green = level 1; Red = level 2; Blue = level 3; Yellow = level 4. Nguồn: r/VinFastCommunity
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: THE WEB -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Mạng Nhện Chồng Chéo · The Incredible Entangled Web</h2>
+      </div>
+
+      <div class="bilingual-cols">
+        <div class="col-en">
+          <div class="col-label">English</div>
+          <p>As of May 31, 2023, Vingroup's corporate network comprised over 130 entities organized in a deliberately complex web of cross-ownership.<sup><a href="#fn3">3</a></sup> Several findings stand out:</p>
+
+          <p><strong>Can Gio Urban Development</strong> holds the distinction of having 5 parent companies within the same network — a structure that suggests artificial capital contributions, where the same money circulates in different forms to inflate apparent equity.</p>
+
+          <p>Vingroup directly owns 26 subsidiaries; Vinhomes controls 22. Vinpearl and Metropolis Hanoi each govern 11 children. At the hub of the network sits <strong>Vincom Security</strong> — a facilities management company — with 10 subsidiaries. That a security guard company has more corporate children than most conglomerates is, at minimum, irregular.</p>
+
+          <div class="callout info">
+            <span class="callout-label">📌 Violation Note</span>
+            <p>Vinpearl was recorded as owning 87M shares of VIC in August 2021 — while VIC owns 99% of Vinpearl. This circular cross-ownership violates Article 195 of Vietnam's Business Law 2020, which prohibits a subsidiary from holding shares in its parent company.<sup><a href="#fn3">3</a></sup></p>
+          </div>
+
+          <p>Vingroup has 7 companies in the mineral mining and stone industry alone — an unusual sector composition for what is ostensibly a real estate and automotive conglomerate. Mineral rights carry inflated valuations that serve as collateral for bond issuances through shell vehicles.</p>
+        </div>
+
+        <div class="col-vi">
+          <div class="col-label">Tiếng Việt</div>
+          <p>Tính đến ngày 31/5/2023, mạng lưới doanh nghiệp của Vingroup bao gồm hơn 130 thực thể được tổ chức theo kiểu sở hữu chéo phức tạp có chủ đích.<sup><a href="#fn3">3</a></sup> Một số phát hiện nổi bật:</p>
+
+          <p><strong>Công ty Đô thị Cần Giờ</strong> có tới 5 công ty mẹ trong cùng một mạng lưới — cơ cấu cho thấy khả năng góp vốn giả mạo, nơi cùng một nguồn tiền luân chuyển dưới nhiều hình thức để thổi phồng vốn chủ sở hữu.</p>
+
+          <p>Vingroup trực tiếp sở hữu 26 công ty con; Vinhomes kiểm soát 22. Vinpearl và Metropolis Hà Nội mỗi bên có 11 công ty con. Tại trung tâm mạng lưới là <strong>Vincom Security</strong> — công ty quản lý cơ sở vật chất — với 10 công ty con. Việc một công ty bảo vệ có nhiều công ty con hơn hầu hết các tập đoàn là điều tối thiểu phải gọi là bất thường.</p>
+
+          <div class="callout info">
+            <span class="callout-label">📌 Vi phạm pháp luật</span>
+            <p>Vinpearl được ghi nhận sở hữu 87 triệu cổ phiếu VIC vào tháng 8/2021 — trong khi VIC sở hữu 99% Vinpearl. Việc sở hữu chéo vòng tròn này vi phạm Điều 195, Luật Doanh nghiệp Việt Nam 2020, quy định công ty con không được sở hữu cổ phần của công ty mẹ.<sup><a href="#fn3">3</a></sup></p>
+          </div>
+
+          <p>Vingroup có tới 7 công ty trong ngành khai thác khoáng sản và đá — thành phần ngành nghề bất thường với một tập đoàn mà bề ngoài chủ yếu là bất động sản và ô tô. Quyền khai thác khoáng sản được định giá thổi phồng để làm tài sản thế chấp phát hành trái phiếu qua các công ty vỏ bọc.</p>
+        </div>
+      </div>
+
+      <div class="bilingual-cols" style="margin-top:2rem;">
+        <div class="full-width">
+          <figure style="margin:0;">
+            <img src="https://preview.redd.it/part-2-the-incredible-entangled-web-of-vingroup-v0-5m5g38977ltb1.png?width=1080&crop=smart&auto=webp&s=537d457da9b2a008993e09b3665334cd7f263736"
+                 alt="Cây Vinfast — dòng tiền cho vay từ mạng lưới"
+                 style="width:100%;display:block;border:1px solid var(--border);">
+            <figcaption style="font-family:var(--mono);font-size:0.65rem;color:var(--text-muted);margin-top:0.5rem;letter-spacing:0.08em;">
+              Mũi tên đỏ cho biết các tổ chức trong mạng lưới đã cho Vinfast vay tiền. Tính đến tháng 6/2023, nợ đối với các công ty này và VIC là 1,546 tỷ USD. / Red arrows indicate entities that lent money to Vinfast. As of June 2023, total debt to these entities and VIC: $1.546B. Nguồn: r/VinFastCommunity
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: VIG BLACK HOLE -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>VIG — Hố Đen Tài Chính · VIG — The Financial Black Hole</h2>
+      </div>
+
+      <div class="bilingual-cols">
+        <div class="col-en">
+          <div class="col-label">English</div>
+          <p>Beyond the publicly mapped network of Vingroup lies a private entity that answers to no regulator and files no public disclosures: <strong>VIG (Vietnam Investment Group)</strong>.<sup><a href="#fn3">3</a></sup></p>
+
+          <p>VIG does not appear in Vingroup's annual reports. It is not listed. It is invisible. Yet its fingerprints are everywhere in the network.</p>
+
+          <p>The tell was the <strong>Lang Van transaction</strong>: Vingroup held ~70% of Lang Van at end of December 2022. By May 2023, it held 99%. No external buyer was involved — the 30% was transferred silently from VIG back to Vingroup. VIG had been holding the silent 30% stake all along, invisible to public investors.</p>
+
+          <blockquote>
+            "VIG is the financial black hole — like the real black hole in physics, where nothing can escape. No information comes out."
+          </blockquote>
+
+          <p>VIG's documented role includes absorbing losses from VIC and pumping artificial profits back in when needed. In 2020 alone, VIC recorded <strong>28,600 billion VND (~$1.2B) in financial profits</strong> simply from transferring companies between entities — profits that exist on paper but represent no real economic value created.</p>
+
+          <p>Without the legal authority to compel disclosure, VIG remains opaque. But the circumstantial evidence — the ICE plant acquisition at $1B with no apparent liquidity, the Lang Van stake, the systematic 30% invisible ownership across the network — points to a single conclusion: <em>VIG is designed to carry losses that would otherwise surface in the public accounts.</em></p>
+        </div>
+
+        <div class="col-vi">
+          <div class="col-label">Tiếng Việt</div>
+          <p>Ngoài mạng lưới đã được lập bản đồ công khai của Vingroup, tồn tại một thực thể tư nhân không chịu sự giám sát của bất kỳ cơ quan quản lý nào và không nộp bất kỳ hồ sơ công khai nào: <strong>VIG (Tập đoàn Đầu tư Việt Nam)</strong>.<sup><a href="#fn3">3</a></sup></p>
+
+          <p>VIG không xuất hiện trong báo cáo thường niên của Vingroup. Không niêm yết. Vô hình. Nhưng dấu vân tay của nó có mặt khắp nơi trong mạng lưới.</p>
+
+          <p>Manh mối nằm ở <strong>giao dịch Làng Văn</strong>: Vingroup nắm ~70% Làng Văn cuối tháng 12/2022. Đến tháng 5/2023, con số là 99%. Không có người mua bên ngoài — 30% được chuyển lặng lẽ từ VIG về Vingroup. VIG đã âm thầm nắm giữ 30% cổ phần này suốt thời gian dài, hoàn toàn vô hình với nhà đầu tư công khai.</p>
+
+          <blockquote>
+            "VIG là hố đen tài chính — như hố đen thực sự trong vật lý, nơi không gì có thể thoát ra. Không có thông tin nào được tiết lộ."
+          </blockquote>
+
+          <p>Vai trò đã được ghi nhận của VIG bao gồm hấp thụ khoản lỗ từ VIC và bơm lợi nhuận giả trở lại khi cần. Chỉ riêng năm 2020, VIC ghi nhận <strong>28.600 tỷ đồng (~1,2 tỷ USD) lợi nhuận tài chính</strong> chỉ từ việc chuyển giao các công ty giữa các thực thể — lợi nhuận tồn tại trên giấy tờ nhưng không tạo ra giá trị kinh tế thực sự.</p>
+
+          <p>Không có thẩm quyền pháp lý để buộc công khai thông tin, VIG vẫn mờ đục. Nhưng bằng chứng gián tiếp — thương vụ mua nhà máy ICE trị giá 1 tỷ USD khi không có thanh khoản rõ ràng, cổ phần Làng Văn, quyền sở hữu 30% vô hình có hệ thống trong mạng lưới — chỉ đến một kết luận duy nhất: <em>VIG được thiết kế để gánh những khoản lỗ vốn lẽ ra sẽ hiện ra trong tài khoản công khai.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: CONCLUSION -->
+    <div class="section fade-in">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2>Nhà Bài Và Trọng Lực · The House of Cards and Gravity</h2>
+      </div>
+
+      <div class="bilingual-cols">
+        <div class="col-en">
+          <div class="col-label">English</div>
+          <p>The architecture is now complete enough to name clearly: Vingroup is a <strong>house of cards built on debt borrowed from shell companies</strong>.<sup><a href="#fn3">3</a></sup> Real assets — land rights, mineral licenses, business contracts — are inflated, pledged as collateral, used to raise bonds, and the proceeds disappear into subsidiary structures where oversight ends.</p>
+
+          <p>The debt will never be fully repaid. In favorable economic conditions, it can be rolled indefinitely — paying only interest, extending maturities, kicking the principal down the road for a decade or more. In adverse conditions, the acceleration is exponential.</p>
+
+          <p>Compare: Truong My Lan of Van Thinh Phat faces prosecution for debts of approximately $20B. Vingroup's current liabilities <strong>exceed that figure by $10B and growing</strong>. Whether Vuong Pham's conduct constitutes criminal liability is for courts to determine. What is not in dispute: the financial architecture described here — shell companies, circular cross-ownership, invisible private vehicles absorbing losses, stock manipulation through entities below disclosure thresholds — represents a systemic risk of the first order to Vietnam's financial stability.<sup><a href="#fn1">1</a></sup></p>
+
+          <div class="callout warning">
+            <span class="callout-label">⚠ Caveat</span>
+            <p>The analysis in this article is based on publicly available financial data, public shareholder records, and documented corporate transactions. The authors make no formal legal allegations. Readers are encouraged to independently verify all figures cited.</p>
+          </div>
+        </div>
+
+        <div class="col-vi">
+          <div class="col-label">Tiếng Việt</div>
+          <p>Kiến trúc nay đã đủ rõ để gọi thẳng tên: Vingroup là <strong>ngôi nhà bài được xây dựng trên nợ vay từ các công ty vỏ bọc</strong>.<sup><a href="#fn3">3</a></sup> Tài sản thực — quyền sử dụng đất, giấy phép khoáng sản, hợp đồng kinh doanh — bị thổi phồng, cầm cố làm tài sản đảm bảo, dùng để phát hành trái phiếu, và tiền thu được biến mất vào các cơ cấu công ty con nơi sự giám sát chấm dứt.</p>
+
+          <p>Khoản nợ sẽ không bao giờ được trả đủ. Trong điều kiện kinh tế thuận lợi, nó có thể được đảo vô thời hạn — chỉ trả lãi, gia hạn kỳ hạn, đẩy vốn gốc xuống một thập kỷ hoặc hơn. Trong điều kiện bất lợi, tốc độ tăng là lũy thừa.</p>
+
+          <p>So sánh: Trương Mỹ Lan của Vạn Thịnh Phát đối mặt với truy tố vì khoản nợ khoảng 20 tỷ USD. Tổng nợ hiện tại của Vingroup <strong>vượt con số đó 10 tỷ USD và vẫn đang tăng</strong>. Liệu hành vi của Vương Phạm có cấu thành trách nhiệm hình sự hay không là để tòa án phán quyết. Điều không còn tranh cãi: kiến trúc tài chính được mô tả ở đây — công ty vỏ bọc, sở hữu chéo vòng tròn, công cụ tư nhân vô hình hấp thụ khoản lỗ, thao túng cổ phiếu qua các thực thể dưới ngưỡng công khai — đại diện cho rủi ro hệ thống bậc nhất đối với sự ổn định tài chính của Việt Nam.<sup><a href="#fn1">1</a></sup></p>
+
+          <div class="callout warning">
+            <span class="callout-label">⚠ Lưu ý</span>
+            <p>Phân tích trong bài viết này dựa trên dữ liệu tài chính công khai, hồ sơ cổ đông công khai và các giao dịch doanh nghiệp có ghi chép. Tác giả không đưa ra cáo buộc pháp lý chính thức nào. Độc giả được khuyến khích tự kiểm chứng tất cả các con số được dẫn.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTNOTES -->
+    <div class="footnotes fade-in">
+      <div class="footnotes-title">Chú thích · Footnotes</div>
+
+      <div class="footnote-item">
+        <span class="footnote-num" id="fn1">[1]</span>
+        <span>"Vingroup debt is a huge timed bomb." Reddit, r/VinFastComm, 2025. <a href="https://www.reddit.com/r/VinFastComm/comments/1mhjok9/vingroup_debt_is_a_huge_timed_bomb/" target="_blank" rel="noopener">https://www.reddit.com/r/VinFastComm/comments/1mhjok9/vingroup_debt_is_a_huge_timed_bomb/</a> — Nguồn dữ liệu nợ Q2 2024 và Q2 2025, phân tích cơ chế "con nợ làm con tin ngân hàng." / Source for Q2 2024 and Q2 2025 liability data; analysis of the "debtor becomes hostage" mechanism.</span>
+      </div>
+
+      <div class="footnote-item">
+        <span class="footnote-num" id="fn2">[2]</span>
+        <span>"How Vuong Pham used multiple shell companies for pumping and dumping of VIC." Reddit, r/VinFastCommunity. <a href="https://www.reddit.com/r/VinFastCommunity/comments/1mhjok9/" target="_blank" rel="noopener">https://www.reddit.com/r/VinFastCommunity/</a> — Danh sách công ty vỏ bọc, địa chỉ đăng ký, cơ chế pump &amp; dump dưới ngưỡng 5%, ước tính bán tháo Q3 và Q4. / Shell company registry, 5%-threshold mechanism, Q3/Q4 dump estimates.</span>
+      </div>
+
+      <div class="footnote-item">
+        <span class="footnote-num" id="fn3">[3]</span>
+        <span>"Part 2: The incredible entangled web of Vingroup." Reddit, r/VinFastCommunity. <a href="https://www.reddit.com/r/VinFastCommunity/comments/175g51p/part_2_the_incredible_entangled_web_of_vingroup/" target="_blank" rel="noopener">https://www.reddit.com/r/VinFastCommunity/comments/175g51p/part_2_the_incredible_entangled_web_of_vingroup/</a> — Bản đồ mạng lưới sở hữu chéo tính đến 31/5/2023; phân tích VIG; vi phạm Điều 195 Luật Doanh nghiệp 2020; lợi nhuận giả 2020. / Cross-ownership network map as of 5/31/2023; VIG analysis; Article 195 violation; 2020 artificial profits.</span>
+      </div>
+
+      <div class="footnote-item">
+        <span class="footnote-num">[4]</span>
+        <span>Dữ liệu cổ đông VIC (2021): <a href="https://s.cafef.vn/hose/vic-tap-doan-vingroup-cong-ty-co-phan.chn" target="_blank" rel="noopener">https://s.cafef.vn/hose/vic-tap-doan-vingroup-cong-ty-co-phan.chn</a> — Danh sách cổ đông VIC được sử dụng để xác định các công ty vỏ bọc và quan hệ sở hữu. / VIC shareholder list used to identify shell companies and ownership relationships.</span>
+      </div>
+
+      <div class="disclaimer">
+        Bài viết này tổng hợp và biên dịch từ các nguồn công khai trên Reddit. Nội dung thể hiện quan điểm của tác giả gốc và không nhất thiết phản ánh lập trường của cingulomania. Không có cáo buộc pháp lý nào được đưa ra. Đây không phải lời khuyên đầu tư. / This article synthesizes and translates from public Reddit sources. Content reflects the views of the original authors and does not necessarily represent the position of cingulomania. No formal legal allegations are made. This is not investment advice.
+      </div>
+    </div>
+
+  </div><!-- /bilingual-wrapper -->
+</main>
+
+<footer>
+  <span>cingulomania</span> — Báo cáo điều tra · Investigative Reporting &nbsp;·&nbsp; Tháng 6, 2026
+</footer>
+
+<script>
+  // Language toggle
+  function setLang(lang) {
+    document.body.className = document.body.className.replace(/show-\w+/g, '').trim();
+    if (lang === 'en') document.body.classList.add('show-en');
+    else if (lang === 'vi') document.body.classList.add('show-vi');
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const map = { en: 0, both: 1, vi: 2 };
+    document.querySelectorAll('.lang-btn')[map[lang]].classList.add('active');
+  }
+
+  // Default: show both
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
